@@ -1,6 +1,5 @@
 #include "pch.h"
-#include "SADXModLoader.h"
-
+#include "Header.h"
 
 Loop untitled2_entries[] = {
 	{ 0x141, 0x872A, 21.23161f, { 142.42683f, 926.35419f, -620.56903f } },
