@@ -19,7 +19,7 @@ int waveocean_waterframe = 0;
 std::vector<NJS_MATERIAL*> newcity_watermats;
 #define newcity_waterfirst (625)
 #define newcity_waterlast (634)
-int newcity_watercur = castletown_waterfirst;
+int newcity_watercur = newcity_waterfirst;
 #define newcity_waterdelay (2)
 int newcity_waterframe = 0;
 // or #include "stdafx.h" for previous Visual Studio versions
@@ -55,7 +55,7 @@ extern "C"
 		}
 
 		hmod = GetModuleHandle(L"ADV01MODELS");
-		landarr = (LandTable**)GetProcAddress(hmod, "___LANDTABLESS");
+		landarr = (LandTable**)GetProcAddress(hmod, "___LANDTABLEEC");
 		land = landarr[0];
 
 		for (int i = 0; i < land->COLCount; ++i)
