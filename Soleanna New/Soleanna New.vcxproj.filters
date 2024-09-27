@@ -35,5 +35,14 @@
     <ClCompile Include="Untitled2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dtd spline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trainspline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPLINEKDV.cPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

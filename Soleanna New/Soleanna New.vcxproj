@@ -88,6 +88,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="dtd spline.cpp" />
+    <ClCompile Include="SPLINEKDV.cPP" />
+    <ClCompile Include="trainspline.cpp" />
     <ClCompile Include="Untitled2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -240,9 +240,10 @@ Loop spline4_entries[] = {
 	{ 0xD10B, 0x4A17, 28.05659f, { 2378.50098f, 122.65408f, 3546.31177f } },
 	{ 0xD0D1, 0x4A00, 0.00000f, { 2404.33423f, 120.59689f, 3535.56079f } }
 };
-
 LoopHead spline4 = { 0, LengthOfArray<int16_t>(spline4_entries), 1055.35242f, spline4_entries, (ObjectFuncPtr)0x4BB1F0 };
+
+
 LoopHead* untitled2_list[] = {
-  &untitled2, &spline2, &spline3, &spline4,
+  &untitled2, &spline2, &spline3, &spline4, 
  nullptr
 };
