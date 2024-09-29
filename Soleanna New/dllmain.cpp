@@ -81,7 +81,8 @@ extern "C"
 		WriteData((float**)0x4E927E, &IceCap1Trans.x);
 		WriteData((float**)0x4E9275, &IceCap1Trans.y);
 		WriteData((float**)0x4E9262, &IceCap1Trans.z);
-
+		WriteData((char*)0x719292, (char)3);
+		WriteData((char*)0x71928B, (char)3);
 		WriteData(reinterpret_cast<LoopHead***>(0x91A864), static_cast<LoopHead**>(untitled2_list));
 		WriteData(reinterpret_cast<LoopHead***>(0x91A874), static_cast<LoopHead**>(dtdspline_list));
 		WriteData(reinterpret_cast<LoopHead***>(0x91A884), static_cast<LoopHead**>(trainspline_list));
