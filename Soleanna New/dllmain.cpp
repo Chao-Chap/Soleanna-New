@@ -2,7 +2,19 @@
 #include "SADXModLoader.h"
 #include "Header.h"
 #include <vector>
-
+#include "sadx-utils.h"
+#include "multi.h"
+#include <vector>
+using std::vector;
+extern int tpj_waterframe;
+extern int tpj_watercur;
+extern vector<NJS_MATERIAL*> tpj_watermats;
+#define tpj_waterfirst (80)
+#define tpj_waterlast (90)
+#define tpj_waterdelay (2)
+void Level_Init(const HelperFunctions& helperFunctions);
+void Objects_Init(const HelperFunctions& helperFunctions);
+void Cameras_Init(const HelperFunctions& helperFunctions);
 // water
 std::vector<NJS_MATERIAL*> castletown_watermats;
 #define castletown_waterfirst (295)
@@ -60,6 +72,11 @@ int kdv_watercur = kdv_waterfirst;
 #define kdv_waterdelay (2)
 int kdv_waterframe = 0;
 
+std::vector<NJS_MATERIAL*> tpj_watermats;
+int tpj_watercur = tpj_waterfirst;
+#define tpj_waterdelay (2)
+int tpj_waterframe = 0;
+
 NJS_VECTOR IceCap1Trans = { 12610, -8905, -358 };
 
 
@@ -70,6 +87,8 @@ ObjectMaster* LoadSnowboardObject(LoadObj flags, char index, ObjectFuncPtr loadS
 	return snowboard = LoadObject(flags, index, loadSub);
 }
 
+const HelperFunctions* gHelperFunctions;
+
 
 
 // or #include "stdafx.h" for previous Visual Studio versions
@@ -78,19 +97,26 @@ extern "C"
 {
 	__declspec(dllexport) void Init(const char* path, const HelperFunctions& helperFunctions)
 	{
+		gHelperFunctions = &helperFunctions;
+		Multi_Init(helperFunctions);
+		Level_Init(helperFunctions);
+		Objects_Init(helperFunctions);
+		Cameras_Init(helperFunctions);
 		WriteData((float**)0x4E927E, &IceCap1Trans.x);
 		WriteData((float**)0x4E9275, &IceCap1Trans.y);
 		WriteData((float**)0x4E9262, &IceCap1Trans.z);
 		WriteData((char*)0x719292, (char)3);
 		WriteData((char*)0x71928B, (char)0);
+		WriteData((char*)0x729514, (char)29);
+		WriteData((char*)0x729512, (char)0);
 		WriteData(reinterpret_cast<LoopHead***>(0x91A864), static_cast<LoopHead**>(untitled2_list));
 		WriteData(reinterpret_cast<LoopHead***>(0x91A874), static_cast<LoopHead**>(dtdspline_list));
 		WriteData(reinterpret_cast<LoopHead***>(0x91A884), static_cast<LoopHead**>(trainspline_list));
 		WriteData(reinterpret_cast<LoopHead***>(0x91A8AC), static_cast<LoopHead**>(splinekdv_list));
 		ECoast1_Actchg = { 4265.338, 55, 6954.677 };
 		
-	
-		
+
+
 		*(float*)0x7E9624 = -10000;
 
 
@@ -100,7 +126,7 @@ extern "C"
 		WriteCall((void*)0x597B34, LoadSnowboardObject);
 		WriteCall((void*)0x597B46, LoadSnowboardObject);
 
-	// more water
+		// more water
 		HMODULE hmod = GetModuleHandle(L"ADV00MODELS");
 		LandTable** landarr = (LandTable**)GetProcAddress(hmod, "___LANDTABLESS");
 		LandTable* land = landarr[3];
@@ -174,7 +200,8 @@ extern "C"
 					if (mdl->mats[j].attr_texId == kdv_waterfirst)
 						kdv_watermats.push_back(&mdl->mats[j]);
 		}
-		
+
+
 
 		hmod = GetModuleHandle(L"ADV02MODELS");
 		landarr = (LandTable**)GetProcAddress(hmod, "___LANDTABLEMR");
@@ -191,6 +218,7 @@ extern "C"
 
 		}
 	}
+
 	__declspec(dllexport) void __cdecl OnFrame()
 	{
 
@@ -344,25 +372,38 @@ extern "C"
 			++dusty2_waterframe;
 
 
-					if (kdv_waterframe == kdv_waterdelay)
-					{
-						kdv_waterframe = 0;
-						if (kdv_watercur == kdv_waterlast)
-							kdv_watercur = kdv_waterfirst;
-						else
-							++kdv_watercur;
-						for (auto mat : kdv_watermats)
-							mat->attr_texId = kdv_watercur;
-					}
-					else
-						++kdv_waterframe;
-			}
-		
+		if (kdv_waterframe == kdv_waterdelay)
+		{
+			kdv_waterframe = 0;
+			if (kdv_watercur == kdv_waterlast)
+				kdv_watercur = kdv_waterfirst;
+			else
+				++kdv_watercur;
+			for (auto mat : kdv_watermats)
+				mat->attr_texId = kdv_watercur;
+		}
+		else
+			++kdv_waterframe;
+
 
 	
-	
-	
+
+	if (tpj_waterframe == tpj_waterdelay)
+	{
+		tpj_waterframe = 0;
+		if (tpj_watercur == tpj_waterlast)
+			tpj_watercur = tpj_waterfirst;
+		else
+			++tpj_watercur;
+		for (auto mat : tpj_watermats)
+			mat->attr_texId = tpj_watercur;
+	}
+	else
+		++tpj_waterframe;
+	}
+
 	__declspec(dllexport) ModInfo SADXModInfo = { ModLoaderVer };
 
 }
 //450.62073, -21.966679, -2481.5488
+
