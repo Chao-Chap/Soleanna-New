@@ -13,3 +13,4 @@ void Cameras_Init(const HelperFunctions& helperFunctions)
 	helperFunctions.ReplaceFile("system\\CAM0501E_DC.bin", "system\\CAMHT01E.bin");
 	helperFunctions.ReplaceFile("system\\CAM0502K_DC.bin", "system\\CAMHT02K.bin");
 }
+

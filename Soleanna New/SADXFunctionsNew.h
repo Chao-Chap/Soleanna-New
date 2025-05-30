@@ -1593,7 +1593,7 @@ FunctionPointer(Sint32, SetObjectTexture2, (int tex), 0x005C09D0); // Sets OBJ_C
 FunctionPointer(void, ObjCasino_MobileObj, (task* tp, NJS_POINT3* vec, int angY), 0x005DD4C0); // Dynamic collision for Casino gears
 
 // Level objects: Station Square
-FunctionPointer(void, LampDisp, (task* a1), 0x0063A930); // Draws the street light in Station Square (night version)
+FunctionPointer(void, LampDisp, (task* a1), 0x0063A930); // Draws the street in Station Square (night version)
 FunctionPointer(int, checkInSsHodel, (), 0x0062EA30); // Checks if the camera is inside Station Square hotel (lol)
 FunctionPointer(void, SetPositionS_WhenHeGetShoes, (task* tsk), 0x006303D0); // Sets Sonic's position in the sewers when he gets the Light Speed Dash shoes
 VoidFunc(SSChangeTimetex, 0x00633690); // Changes Station Square textures depending on the time of day

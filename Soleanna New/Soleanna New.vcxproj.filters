@@ -30,16 +30,40 @@
     <ClInclude Include="paths.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="multi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="object-utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="mod.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="daeth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IniFile.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextConv.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hub.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="leveltask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="weights.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="o_skybox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -71,22 +95,40 @@
     <ClCompile Include="LandTableInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="object-utils.cpp">
+    <ClCompile Include="multi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="multi.cpp">
+    <ClCompile Include="TextConv.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actHub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="leveltask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deathcast%3be.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="weight.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="objects.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="camera.cpp">
+    <ClCompile Include="npc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="event.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="\\BASEMENT\Corrin\dell\repos\Soleanna-New\Soleanna New\acttropical.cpp">
+    <ClCompile Include="o_skybox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

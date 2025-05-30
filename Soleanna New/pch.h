@@ -4,13 +4,27 @@
 #include "framework.h"
 
 #include "SADXModLoader.h"
-#include "LandTableInfo.h"
-#include "ModelInfo.h"
-#include "AnimationFile.h"
-#include "object-utils.h"
-#include "sadx-utils.h"
+#include "SADXFunctionsNew.h"
+#include "SADXFunctions.h"
+#include "Memaccess.h"
+#include "FunctionHook.h"
+#include "UsercallFunctionHandler.h"
 
-extern const HelperFunctions* gHelperFunctions;
+#include "ModelInfo.h"
+#include "LandTableInfo.h"
+#include "AnimationFile.h"
+
+#include "IniFile.hpp"
+
+#include "mod.h"
+
+#include "leveltask.h"	
+#include "utils.h"
+#include "objects.h"
+#include "NPC.h"
+#include "AnimationFile.h"
+#include "weights.h"
+#include "objects.h"
 
 
 #endif

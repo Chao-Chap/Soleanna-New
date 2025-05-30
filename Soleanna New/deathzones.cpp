@@ -180,3 +180,4 @@ PL_KILLCOLLI Tropicale2_deathzones[] = {
 	{ CharacterFlags_Knuckles, &ht2_dz },
 	{ 0 }
 };
+

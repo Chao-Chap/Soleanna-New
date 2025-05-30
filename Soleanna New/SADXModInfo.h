@@ -10,7 +10,7 @@
 #include "SADXStructsNew.h"
 #include "ScaleInfo.h"
 #include "WeightInfo.h"
-
+#include "SADXModInfo.h"
  // SADX Mod Loader API version.
 static const int ModLoaderVer = 17;
 struct PatchInfo

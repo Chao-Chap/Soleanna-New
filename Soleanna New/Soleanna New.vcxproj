@@ -51,6 +51,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -68,6 +69,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -78,25 +80,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AnimationFile.h" />
     <ClInclude Include="daeth.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="hub.h" />
+    <ClInclude Include="IniFile.hpp" />
+    <ClInclude Include="leveltask.h" />
     <ClInclude Include="mod.h" />
-    <ClInclude Include="multi.h" />
-    <ClInclude Include="object-utils.h" />
+    <ClInclude Include="NPC.h" />
+    <ClInclude Include="objects.h" />
+    <ClInclude Include="o_skybox.h" />
     <ClInclude Include="paths.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="sadx-utils.h" />
+    <ClInclude Include="TextConv.hpp" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="weights.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="actHub.cpp" />
+    <ClCompile Include="AnimationFile.cpp" />
+    <ClCompile Include="deathcast%3be.cpp" />
     <ClCompile Include="deathzones.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="event.cpp" />
     <ClCompile Include="LandTableInfo.cpp" />
+    <ClCompile Include="leveltask.cpp" />
+    <ClCompile Include="ModelInfo.cpp" />
     <ClCompile Include="multi.cpp" />
-    <ClCompile Include="object-utils.cpp" />
+    <ClCompile Include="npc.cpp" />
     <ClCompile Include="objects.cpp" />
+    <ClCompile Include="o_skybox.cpp" />
     <ClCompile Include="paths.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -104,9 +118,11 @@
     </ClCompile>
     <ClCompile Include="dtd spline.cpp" />
     <ClCompile Include="SPLINEKDV.cPP" />
+    <ClCompile Include="TextConv.cpp" />
     <ClCompile Include="trainspline.cpp" />
     <ClCompile Include="Untitled2.cpp" />
-    <ClCompile Include="\\BASEMENT\Corrin\dell\repos\Soleanna-New\Soleanna New\acttropical.cpp" />
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="weight.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
