@@ -81,6 +81,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AnimationFile.h" />
+    <ClInclude Include="bomb.h" />
     <ClInclude Include="daeth.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Header.h" />
@@ -100,8 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actHub.cpp" />
+    <ClCompile Include="ActHubForest.cpp" />
+    <ClCompile Include="adv02.cpp" />
     <ClCompile Include="AnimationFile.cpp" />
+    <ClCompile Include="bomb.cpp" />
     <ClCompile Include="deathcast%3be.cpp" />
+    <ClCompile Include="deathzoneforest.cpp" />
     <ClCompile Include="deathzones.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="LandTableInfo.cpp" />
@@ -117,12 +122,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="dtd spline.cpp" />
+    <ClCompile Include="priest.cpp" />
+    <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="SPLINEKDV.cPP" />
     <ClCompile Include="TextConv.cpp" />
     <ClCompile Include="trainspline.cpp" />
     <ClCompile Include="Untitled2.cpp" />
     <ClCompile Include="utils.cpp" />
     <ClCompile Include="weight.cpp" />
+    <ClCompile Include="woman.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

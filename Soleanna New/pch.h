@@ -25,6 +25,5 @@
 #include "AnimationFile.h"
 #include "weights.h"
 #include "objects.h"
-
-
+#define LevelIDs_Soleanna_Hub 30
 #endif

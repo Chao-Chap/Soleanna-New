@@ -6,11 +6,25 @@
 
 NJS_TEXNAME TEX_CastleTown[500] = { 0 };
 NJS_TEXLIST TEXLIST_CastleTown = { arrayptrandlength(TEX_CastleTown) };
+
+NJS_TEXNAME TEX_FOREST[100] = { 0 };
+NJS_TEXLIST TEXLIST_FOREST = { arrayptrandlength(TEX_FOREST) };
+
 NJS_TEXNAME TEX_CastleTown_Sky[5] = { 0 };
 NJS_TEXLIST TEXLIST_CastleTown_Sky = { arrayptrandlength(TEX_CastleTown_Sky) };
 
 NJS_TEXNAME TEX_NPC_SONICMAN[18];
 NJS_TEXLIST  TEXLIST_NPC_SONICMAN = { arrayptrandlengthT(TEX_NPC_SONICMAN, Uint32) };
+
+NJS_TEXNAME TEX_NPC_SOLDIER[10];
+NJS_TEXLIST  TEXLIST_NPC_SOLDIER = { arrayptrandlengthT(TEX_NPC_SOLDIER, Uint32) };
+
+
+NJS_TEXNAME TEX_NPC_PRIEST[10];
+NJS_TEXLIST  TEXLIST_NPC_PRIEST = { arrayptrandlengthT(TEX_NPC_PRIEST, Uint32) };
+
+NJS_TEXNAME TEX_NPC_WOMAN1[10];
+NJS_TEXLIST  TEXLIST_NPC_WOMAN1 = { arrayptrandlengthT(TEX_NPC_WOMAN1, Uint32) };
 
 NJS_TEXNAME TEX_CastleTown_Water[14] = { 0 };
 NJS_TEXLIST TEXLIST_CastleTown_Water = { arrayptrandlength(TEX_CastleTown_Water) };
@@ -47,7 +61,16 @@ _OBJ_ITEMENTRY OBJECTLIST_CastleTown_Entries[] = {
 	{ 2, 0, 1, 1000000.0f, 0, (TaskFuncPtr)0x4D4BE0, "BIGWJUMP" }, // ID 27
 	{ 2, 2, 0, 1000000.0f, 0, (TaskFuncPtr)0x640850, "SCENE CHANGE" }, // ID 28
 	{ 2, 2, 1, 1000000.0f, 0, NPC_SONICMAN_Event, "SONICMANNPC"}, // ID 29
-
+	{ 2, 2, 1, 1000000.0f, 0, NPC_SOLDIER_Event, "SOLDIER"}, // ID 30
+	{ 2, 2, 1, 1000000.0f, 0, NPC_SOLDIER2_Event, "SOLDIER2"}, // ID 31
+	{ 2, 2, 1, 1000000.0f, 0, NPC_SOLDIER3_Event, "SOLDIER3"}, // ID 32
+	{ 2, 2, 1, 1000000.0f, 0, NPC_SOLDIER4_Event, "SOLDIER4"}, // ID 33
+	{ 2, 2, 1, 1000000.0f, 0, NPC_SOLDIER5_Event, "SOLDIER5"}, // ID 34
+	{ 2, 2, 1, 1000000.0f, 0, NPC_Priest_Event, "Priest1"}, // ID 35
+	{ 2, 2, 1, 1000000.0f, 0, NPC_Priest2_Event, "Priest2"}, // ID 36
+	{ 2, 2, 1, 1000000.0f, 0, NPC_Priest3_Event, "Priest3"}, // ID 37
+	{ 2, 2, 1, 1000000.0f, 0, NPC_Woman1_Event, "Woman1"}, // ID 38
+	{ 2, 2, 1, 1000000.0f, 0, NPC_Woman2_Event, "Woman2"}, // ID 39
 };
 
 _OBJ_ITEMTABLE OBJECTLIST_CastleTown = { LengthOfArray(OBJECTLIST_CastleTown_Entries), 0, OBJECTLIST_CastleTown_Entries };
@@ -61,6 +84,9 @@ TEX_PVMTABLE TEXTURELIST_CastleTown[] = {
 	{ "CastleTown_Sky", &TEXLIST_CastleTown_Sky },
 
 	{"NPC_SONICMANTEX",(&TEXLIST_NPC_SONICMAN)},
+	{"SOLDIER",(&TEXLIST_NPC_SOLDIER)},
+	{"PRIEST",(&TEXLIST_NPC_PRIEST)},
+	{"WOMAN",(&TEXLIST_NPC_WOMAN1)},
 	{ "PEN", (TexList*)0x92D39C }, // Penguin
 	{ "LION", (TexList*)0x944094 }, // Lion
 	{ "MOGU", (TexList*)0x93ECEC }, // Mole
@@ -75,15 +101,40 @@ TEX_PVMTABLE TEXTURELIST_CastleTown[] = {
 
 	
 	{ 0 }
-};
 
+}; TEX_PVMTABLE TEXTURELIST_Forest[] = {
+
+	{ "CastleTown_Water", &TEXLIST_CastleTown_Water },
+	{ "CastleTown_Sky", &TEXLIST_CastleTown_Sky },
+
+	{"SOLDIER",(&TEXLIST_NPC_SOLDIER)},
+	{"PRIEST",(&TEXLIST_NPC_PRIEST)},
+	{ "PEN", (TexList*)0x92D39C }, // Penguin
+	{ "LION", (TexList*)0x944094 }, // Lion
+	{ "MOGU", (TexList*)0x93ECEC }, // Mole
+	{ "ZOU", (TexList*)0x94160C }, // Elephant
+	{ "GORI", (TexList*)0x945964 }, // Gorilla
+	{ "SUPI_SUPI", (TexList*)0x96F518 }, // Spinner
+	{ "UNI_A_UNIBODY", (TexList*)0x96CB5C }, // Unidus Black
+	{ "TOGEBALL_TOGEBALL", (TexList*)0x96BC54 }, // Spiked Ball
+
+
+
+
+
+	{ 0 }
+};
 
 //	Load Objects:
 
 void LOAD_Objects()
 {
 	Load_NPC_SONICMAN();
+	Load_NPC_SOLDIER();
 	LOAD_CastleTown_Skybox();
+	Load_NPC_Priest();
+	Load_NPC_Woman1();
+
 }
 
 
@@ -91,10 +142,10 @@ void LOAD_Objects()
 
 void INIT_Objects()
 {
-	ListofPvmList[LevelIDs_E] = TEXTURELIST_CastleTown;
+	ListofPvmList[LevelIDs_Soleanna_Hub ] = TEXTURELIST_CastleTown;
+	objItemTable[LevelIDs_Soleanna_Hub * 8 + 0] = &OBJECTLIST_CastleTown;
 
-
-	objItemTable[LevelIDs_E * 8 + 0] = &OBJECTLIST_CastleTown;
+	objItemTable[LevelIDs_Soleanna_Hub * 8 + 1] = &OBJECTLIST_FOREST;
 
 	LOAD_Objects();
 

@@ -3,6 +3,7 @@
 #include "paths.h"
 #include "daeth.h"
 #include "memaccess.h"
+
 #include "SADXEnums.h"
 //	Custom FogData, DrawDistance and SkyboxDrawDistance values:
 
@@ -35,36 +36,40 @@ void SETVIEWDATA_CastleTown()
 //	Load Landtable:
 
 LandTableInfo* LAND_CastleTown00 = nullptr;
-
+LandTableInfo* LAND_FOREST00 = nullptr;
 void LANDTABLE_CastleTown()
 {
 
 LoadLandTable(&LAND_CastleTown00, "CastleTown_Landtable", &TEXLIST_CastleTown);
 
-objLandTable[LevelIDs_E][0] = (_OBJ_LANDTABLE*)LAND_CastleTown00->getlandtable();
+objLandTable[LevelIDs_Soleanna_Hub][0] = (_OBJ_LANDTABLE*)LAND_CastleTown00->getlandtable();
+LoadLandTable(&LAND_FOREST00, "Forest_Landtable", &TEXLIST_FOREST);
 
+objLandTable[LevelIDs_Soleanna_Hub][1] = (_OBJ_LANDTABLE*)LAND_FOREST00->getlandtable();
 
 	
 	
 }
 PL_KILLCOLLI* Castle_deathzones[] = {
-  Castlee1_deathzones
+  Castlee1_deathzones,
+	Forest_deathzones
 };
 
 //	Load Deathzones:
 
 void DEATHZONES_CastleTown()
 {
-	KillingCollisionModelsListList[LevelIDs_E] = Castle_deathzones;
+	KillingCollisionModelsListList[LevelIDs_Soleanna_Hub] = Castle_deathzones;
+	KillingCollisionModelsListList[LevelIDs_Soleanna_Hub] = Castle_deathzones;
 
 }
 
 
 //	Start Positions:
 
-StartPosition STARTPOS_CastleTown00 = { LevelIDs_E, 0, { 173.22f, 25.0f, 1458.9f }, 0xC000 };
-StartPosition STARTPOS_CastleTown01 = { LevelIDs_E, 1, { 173.22f, 25.0f, 1458.9f }, 0xC000 };
-StartPosition STARTPOS_CastleTown02 = { LevelIDs_E, 2, { 173.22f, 25.0f, 1458.9f }, 0xC000 };
+StartPosition STARTPOS_CastleTown00 = { LevelIDs_Soleanna_Hub, 0, { 173.22f, 25.0f, 1458.9f }, 0xC000 };
+StartPosition STARTPOS_CastleTown01 = { LevelIDs_Soleanna_Hub, 1, { 1900.22f, 108.0f, -19.9f }, 0xC000 };
+StartPosition STARTPOS_CastleTown02 = { LevelIDs_Soleanna_Hub, 2, { 173.22f, 25.0f, 1458.9f }, 0xC000 };
 
 void STARTPOSITIONS_CastleTown()
 {
@@ -75,7 +80,10 @@ void STARTPOSITIONS_CastleTown()
 		HelperFunctionsGlobal.RegisterStartPosition(i, STARTPOS_CastleTown02);
 	}
 }
-
+void newtitlecard(){
+	*(const char**)0x91C47C = "T_CASTLETOWN";
+	*(const char**)0x91C30C = "T_CASTLETOWN";
+}
 
 
 
@@ -91,31 +99,28 @@ void CastleTown_Init()
 {
 	
 	DEATHZONES_CastleTown();
-	ReplaceBIN("SETSS04S", "SET_CastleTown-S");
-	ReplaceBIN("SETSS04M", "SET_CastleTown-S");
-	ReplaceBIN("SETSS04E", "SET_CastleTown-S");
-	ReplaceBIN("SETSS04B", "SET_CastleTown-S");
-	ReplaceBIN("SETSS04A", "SET_CastleTown-S");
-	ReplaceBIN("SETSS04K", "SET_CastleTown-S");
-	ReplaceBIN("SETSS04L", "SET_CastleTown-S");
+	LoadCamFile(1, "SS04");
+	LoadSetFile(1, "_FOREST-");
 	LoadCamFile(0, "SS04");
-	LoadSetFile(0, "SS04");
+	LoadSetFile(0, "_CastleTown-");
 	LANDTABLE_CastleTown();
+
+
 
 }
 
 void LoadingFunctionProxy()
 {
 
-	if (CurrentLevel == LevelIDs_E)
+	if (CurrentLevel == LevelIDs_Soleanna_Hub)
 	{
 		STARTPOSITIONS_CastleTown();
 		SETVIEWDATA_CastleTown();
 		CastleTown_Init();
-	
+
 		CurrentLevel = LevelIDs_StationSquare;
 		LoadLevelObjTextures();
-		CurrentLevel = LevelIDs_E;
+		CurrentLevel = LevelIDs_Soleanna_Hub;
 
 		
 

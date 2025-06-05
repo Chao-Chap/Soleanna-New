@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\forest">
+      <UniqueIdentifier>{c20c5aa8-64db-4132-88a8-9abd7371d7f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\town">
+      <UniqueIdentifier>{e28bbb6c-c48f-41b4-9235-c4bf8a34f563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\object">
+      <UniqueIdentifier>{de776faf-c9af-4593-a7c6-519fbf10050c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -66,6 +75,9 @@
     <ClInclude Include="o_skybox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="bomb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -101,9 +113,6 @@
     <ClCompile Include="TextConv.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="actHub.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="leveltask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -113,23 +122,47 @@
     <ClCompile Include="ModelInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="deathcast%3be.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AnimationFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="weight.cpp">
+    <ClCompile Include="bomb.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActHubForest.cpp">
+      <Filter>Source Files\forest</Filter>
+    </ClCompile>
+    <ClCompile Include="adv02.cpp">
+      <Filter>Source Files\forest</Filter>
+    </ClCompile>
+    <ClCompile Include="deathzoneforest.cpp">
+      <Filter>Source Files\forest</Filter>
+    </ClCompile>
+    <ClCompile Include="actHub.cpp">
+      <Filter>Source Files\town</Filter>
+    </ClCompile>
+    <ClCompile Include="deathcast%3be.cpp">
+      <Filter>Source Files\town</Filter>
     </ClCompile>
     <ClCompile Include="objects.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="npc.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\town</Filter>
     </ClCompile>
     <ClCompile Include="o_skybox.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="priest.cpp">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Soldier.cpp">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="weight.cpp">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="woman.cpp">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="npc.cpp">
+      <Filter>Source Files\object</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

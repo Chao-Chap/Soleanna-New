@@ -9,7 +9,7 @@
 void ANIM_Water()
 {
 	TEXLIST_CastleTown.textures[295].texaddr = TEXLIST_CastleTown_Water.textures[(FrameCounter / 2) % (LengthOfArray(TEX_CastleTown_Water))].texaddr; // Water Animation
-
+	TEXLIST_FOREST.textures[84].texaddr = TEXLIST_CastleTown_Water.textures[(FrameCounter / 2) % (LengthOfArray(TEX_CastleTown_Water))].texaddr; // Water Animation
 }
 
 
@@ -20,27 +20,32 @@ void RD_CastleTown(task* tp)
 	auto twp = tp->twp;
 
 	if (!twp->mode)
-	{		
+	{
+		if (CurrentAct == 0) {
+			initCTmusic();
+			twp->mode = 1;
+		}
+	
+	
+		if (CurrentAct == 1) {
+			initForestmusic();
+			twp->mode = 2;
 
-
-		
+		}
+	}
 		SETVIEWDATA_CastleTown();
-
-		twp->mode++;
 	}
 
-
-
-
-}
 
 
 //	Init LevelTask:
 
 void INIT_LevelTask()
 {
+	STARTPOSITIONS_CastleTown();
 
-	RoundMasterList[LevelIDs_E] = RD_CastleTown; // Level Task.
-	ScrollMasterList[LevelIDs_E] = BG_CastleTown; // Skybox Task.
+
+	RoundMasterList[LevelIDs_Soleanna_Hub] = RD_CastleTown; // Level Task.
+	ScrollMasterList[LevelIDs_Soleanna_Hub] = BG_CastleTown; // Skybox Task.
 
 }

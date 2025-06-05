@@ -3,7 +3,7 @@
 
 AnimationFile* NPCIDLE = nullptr;
 ModelInfo* NPC_SONICMANMDL = nullptr;
-int x;
+
 FunctionPointer(void, SetLookingPoint, (unsigned __int8 player, NJS_POINT3* posTarget), 0x441000);
 void DISPLAY_SonicMAN(task* tp)
 {
@@ -68,9 +68,9 @@ void NPC_SONICMAN_Event(task* tp)
 	
 	if (Controllers[0].PressedButtons & Buttons_Y)
 	{
-		EV_SetFace(EV_GetPlayer(0), "FFF");
-
-		CharObj2Ptrs[0]->NoControlTime = 200;
+		EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+		
+	
 		DisplayHintText(TestDialogue, 80);
 	}
 
@@ -88,7 +88,7 @@ void NPC_SONICMAN_Event(task* tp)
 	void Load_NPC_SONICMAN()
 {
 		NPC_SONICMANMDL = LoadBasicModel("NPC_SONICMAN");
-		 NPCIDLE = LoadAnim("NPC_WAIT");
+		 NPCIDLE = LoadAnim("SonicMan_Wait");
 	
 
 

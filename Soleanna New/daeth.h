@@ -6,3 +6,4 @@ extern PL_KILLCOLLI Tropicale2_deathzones[];
 
 
 extern PL_KILLCOLLI Castlee1_deathzones[];
+extern PL_KILLCOLLI Forest_deathzones[];

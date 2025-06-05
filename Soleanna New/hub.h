@@ -1,6 +1,10 @@
 #pragma once
 void SETVIEWDATA_CastleTown();
 void CastleTown_Init();
-void SSnewSet();
+PL_KILLCOLLI* Castle_deathzones[];
 void DEATHZONES_CastleTown();
 void STARTPOSITIONS_CastleTown();
+void newtitlecard();
+void initForestmusic();
+void FOREST_Init();;
+Void LANDTABLE_CastleTown();
