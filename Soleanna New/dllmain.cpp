@@ -11,6 +11,7 @@
 #include "bomb.h"
 int MusicID_CastleTown;
 int MusicID_FOREST;
+int MusicID_City;
 const HelperFunctions* gHelperFunctions;
 
 std::string ModPath;
@@ -31,6 +32,9 @@ extern "C"
 
 		MusicID_FOREST = helperFunctions.RegisterMusicFile(BGM_FOREST);
 
+		MusicInfo BGM_City{ "city", 1 };
+
+		MusicID_City = helperFunctions.RegisterMusicFile(BGM_City);
 		LoadingFunctionProxy();
 
 		ModPath = path;
@@ -46,17 +50,34 @@ extern "C"
 		INIT_LevelTask();
 		newtitlecard();
 		INIT_Objects();
-	
+		// Add a new act to Red Mountain set/cam files (originally 0x210)
+		SetDataThings[LevelIDs_Soleanna_Hub] = 0x3210;
+		CamDataThings[LevelIDs_Soleanna_Hub] = 0x3210;
+
 		
 }
 	__declspec(dllexport) void __cdecl OnFrame()
 	{
-	
+
+
 		ANIM_Water();
 
+		if (CurrentAct == 0) {
+			initCTmusic();
+
+		}
+
+
+		if (CurrentAct == 1) {
+			initForestmusic();
+
+
+		}
+		if (CurrentAct == 2) {
+			initCitymusic();
+		}
 
 	}
-	
 	__declspec(dllexport) ModInfo SADXModInfo = { ModLoaderVer };
 
 }

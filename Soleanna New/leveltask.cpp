@@ -10,6 +10,7 @@ void ANIM_Water()
 {
 	TEXLIST_CastleTown.textures[295].texaddr = TEXLIST_CastleTown_Water.textures[(FrameCounter / 2) % (LengthOfArray(TEX_CastleTown_Water))].texaddr; // Water Animation
 	TEXLIST_FOREST.textures[84].texaddr = TEXLIST_CastleTown_Water.textures[(FrameCounter / 2) % (LengthOfArray(TEX_CastleTown_Water))].texaddr; // Water Animation
+	TEXLIST_City.textures[625].texaddr = TEXLIST_CastleTown_Water.textures[(FrameCounter / 2) % (LengthOfArray(TEX_CastleTown_Water))].texaddr; // Water Animation
 }
 
 
@@ -23,14 +24,18 @@ void RD_CastleTown(task* tp)
 	{
 		if (CurrentAct == 0) {
 			initCTmusic();
-			twp->mode = 1;
+			twp->mode = 0;
 		}
 	
 	
 		if (CurrentAct == 1) {
 			initForestmusic();
+			twp->mode = 1;
+		
+		}
+		if (CurrentAct == 2) {
+			initCitymusic();
 			twp->mode = 2;
-
 		}
 	}
 		SETVIEWDATA_CastleTown();

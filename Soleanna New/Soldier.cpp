@@ -61,7 +61,7 @@ const char* SoldierForest2Dialogue[3] = {
 	 { nullptr },
 };
 const char* SoldierForest3Dialogue[3] = {
-	{ "\aI was assiagned to post here. \nNothing ever happens."},
+	{ "\aI was put to post here. \nNothing ever happens."},
 	{"\aWhat am I guarding? Nothing is here."},
 	 { nullptr },
 };

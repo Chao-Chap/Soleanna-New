@@ -131,9 +131,6 @@
     <ClCompile Include="ActHubForest.cpp">
       <Filter>Source Files\forest</Filter>
     </ClCompile>
-    <ClCompile Include="adv02.cpp">
-      <Filter>Source Files\forest</Filter>
-    </ClCompile>
     <ClCompile Include="deathzoneforest.cpp">
       <Filter>Source Files\forest</Filter>
     </ClCompile>
@@ -163,6 +160,12 @@
     </ClCompile>
     <ClCompile Include="npc.cpp">
       <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Citydeath.cpp">
+      <Filter>Source Files\forest</Filter>
+    </ClCompile>
+    <ClCompile Include="adv02.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

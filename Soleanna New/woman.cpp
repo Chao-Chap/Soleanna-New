@@ -40,6 +40,12 @@ const char* Woman2_Dialogue[3] = {
 	{"I think we should skin the \nprincess alive. "},
 	 { nullptr },
 };
+const char* Woman3_Dialogue[4] = {
+	{ "\aI used to pray to Solaris, but then I realized religion \nwas a tool of opression."},
+	{"It's all bullshit."},
+	{"I have a podcast, if you're interested."},
+	 { nullptr },
+};
 void NPC_Woman1_Event(task* tp)
 {
 	tp->disp = DISPLAY_Woman1;
@@ -75,6 +81,26 @@ void NPC_Woman2_Event(task* tp)
 
 
 			DisplayHintText(Woman2_Dialogue, 120);
+		}
+
+	}
+
+	tp->disp(tp);
+}
+void NPC_Woman3_Event(task* tp)
+{
+	tp->disp = DISPLAY_Woman1;
+	auto twp = tp->twp;
+
+	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+	{
+
+		if (Controllers[0].PressedButtons & Buttons_Y)
+		{
+			EV_SetFace(EV_GetPlayer(0), "WWWWWWWWW");
+
+
+			DisplayHintText(Woman3_Dialogue, 120);
 		}
 
 	}

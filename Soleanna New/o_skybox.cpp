@@ -11,7 +11,11 @@ void DISPLAY_CastleTown_Skybox(task* tp)
 {
     auto twp = tp->twp;
 
-    njSetTexture(&TEXLIST_CastleTown_Sky);
+            njSetTexture(&TEXLIST_CastleTown_Sky);
+        
+
+    
+    
 
     Direct3D_SetNearFarPlanes(SkyboxDrawDistance.Minimum, SkyboxDrawDistance.Maximum);
 
@@ -28,7 +32,56 @@ void DISPLAY_CastleTown_Skybox(task* tp)
 
     Direct3D_SetNearFarPlanes(LevelDrawDistance.Minimum, LevelDrawDistance.Maximum);
 }
+void DISPLAY_CastleTown_Skybox_Eve(task* tp)
+{
+    auto twp = tp->twp;
 
+    njSetTexture(&TEXLIST_CastleTown_Sky_Eve);
+
+
+
+
+
+    Direct3D_SetNearFarPlanes(SkyboxDrawDistance.Minimum, SkyboxDrawDistance.Maximum);
+
+    DisableFog();
+    njPushMatrix(0);
+
+    njTranslate(0, 0.0f, -1000.0f, 0.0f);
+    njScale(0, 3.0f, 3.0f, 3.0f);
+
+    DrawModel(MDL_CastleTown_Skybox->getmodel()->basicdxmodel);
+
+    njPopMatrix(1u);
+    ToggleStageFog();
+
+    Direct3D_SetNearFarPlanes(LevelDrawDistance.Minimum, LevelDrawDistance.Maximum);
+}
+void DISPLAY_CastleTown_Skybox_Night(task* tp)
+{
+    auto twp = tp->twp;
+
+    njSetTexture(&TEXLIST_CastleTown_Sky_Night);
+
+
+
+
+
+    Direct3D_SetNearFarPlanes(SkyboxDrawDistance.Minimum, SkyboxDrawDistance.Maximum);
+
+    DisableFog();
+    njPushMatrix(0);
+
+    njTranslate(0, 0.0f, -1000.0f, 0.0f);
+    njScale(0, 3.0f, 3.0f, 3.0f);
+
+    DrawModel(MDL_CastleTown_Skybox->getmodel()->basicdxmodel);
+
+    njPopMatrix(1u);
+    ToggleStageFog();
+
+    Direct3D_SetNearFarPlanes(LevelDrawDistance.Minimum, LevelDrawDistance.Maximum);
+}
 void EXEC_CastleTown_Skybox(task* tp)
 {
     auto twp = tp->twp;
@@ -46,10 +99,22 @@ void EXEC_CastleTown_Skybox(task* tp)
 void BG_CastleTown(task* tp)
 {
     tp->exec = EXEC_CastleTown_Skybox;
-    tp->disp = DISPLAY_CastleTown_Skybox;
+    if (CurrentAdventureData) {
+        if (CurrentAdventureData->TimeOfDay == TimesOfDay_Day)
+        {
+            tp->disp = DISPLAY_CastleTown_Skybox;
+        }
+        if (CurrentAdventureData->TimeOfDay == TimesOfDay_Night)
+        {
+            tp->disp = DISPLAY_CastleTown_Skybox_Night;
+        }
+        if (CurrentAdventureData->TimeOfDay == TimesOfDay_Evening)
+        {
+            tp->disp = DISPLAY_CastleTown_Skybox_Eve;
+        }
+    }
+    else    tp->disp = DISPLAY_CastleTown_Skybox;
 }
-
-
 //  Skybox - Load Assets:
 
 void LOAD_CastleTown_Skybox()

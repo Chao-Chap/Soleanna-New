@@ -4,7 +4,6 @@
 AnimationFile* NPCIDLE = nullptr;
 ModelInfo* NPC_SONICMANMDL = nullptr;
 
-FunctionPointer(void, SetLookingPoint, (unsigned __int8 player, NJS_POINT3* posTarget), 0x441000);
 void DISPLAY_SonicMAN(task* tp)
 {
 
@@ -49,12 +48,15 @@ AnimationFile* LoadAnim(const char* name)
 	return file;
 }
 
-const char* TestDialogue[3] = {
+const char* SonicManDialogue1[3] = {
 	{ "\a I'm Sonic-Man!\n The Blue Blur Himself!"},
 	{ "\a I would race you but i don't\n Want to Humilate you!"},
 	 { nullptr },
 };
-
+const char* SonicManDialogue2[2] = {
+	{"\aRemember kids, by request of my parole officer, \nSonic-man says 'no' to drugs!"},
+	{ nullptr },
+};
 
 
 void NPC_SONICMAN_Event(task* tp)
@@ -71,17 +73,11 @@ void NPC_SONICMAN_Event(task* tp)
 		EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
 		
 	
-		DisplayHintText(TestDialogue, 80);
+		DisplayHintText(SonicManDialogue1, 120);
 	}
 
 
 }
-
-	else if (lookatsonicman)
-	{
-		lookatsonicman = false;
-		SetLookingPoint(0, NULL);
-	}
 	tp->disp(tp);
 }
 

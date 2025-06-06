@@ -6,5 +6,5 @@ void DEATHZONES_CastleTown();
 void STARTPOSITIONS_CastleTown();
 void newtitlecard();
 void initForestmusic();
-void FOREST_Init();;
+void FOREST_Init();
 Void LANDTABLE_CastleTown();

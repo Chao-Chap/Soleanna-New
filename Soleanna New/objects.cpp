@@ -10,8 +10,18 @@ NJS_TEXLIST TEXLIST_CastleTown = { arrayptrandlength(TEX_CastleTown) };
 NJS_TEXNAME TEX_FOREST[100] = { 0 };
 NJS_TEXLIST TEXLIST_FOREST = { arrayptrandlength(TEX_FOREST) };
 
+NJS_TEXNAME TEX_City[640] = { 0 };
+NJS_TEXLIST TEXLIST_City = { arrayptrandlength(TEX_City) };
+
 NJS_TEXNAME TEX_CastleTown_Sky[5] = { 0 };
 NJS_TEXLIST TEXLIST_CastleTown_Sky = { arrayptrandlength(TEX_CastleTown_Sky) };
+
+NJS_TEXNAME TEX_CastleTown_Sky_Night[5] = { 0 };
+NJS_TEXLIST TEXLIST_CastleTown_Sky_Night = { arrayptrandlength(TEX_CastleTown_Sky_Night) };
+
+NJS_TEXNAME TEX_CastleTown_Sky_Eve[5] = { 0 };
+NJS_TEXLIST TEXLIST_CastleTown_Sky_Eve = { arrayptrandlength(TEX_CastleTown_Sky_Eve) };
+
 
 NJS_TEXNAME TEX_NPC_SONICMAN[18];
 NJS_TEXLIST  TEXLIST_NPC_SONICMAN = { arrayptrandlengthT(TEX_NPC_SONICMAN, Uint32) };
@@ -82,6 +92,8 @@ TEX_PVMTABLE TEXTURELIST_CastleTown[] = {
 	{ "OBJ_HIGHWAY",(TexList*)0x26703F0},
 	{ "CastleTown_Water", &TEXLIST_CastleTown_Water },
 	{ "CastleTown_Sky", &TEXLIST_CastleTown_Sky },
+	{ "CastleTown_Sky_Night", &TEXLIST_CastleTown_Sky_Night },
+	{ "CastleTown_Sky_Eve", &TEXLIST_CastleTown_Sky_Eve },
 
 	{"NPC_SONICMANTEX",(&TEXLIST_NPC_SONICMAN)},
 	{"SOLDIER",(&TEXLIST_NPC_SOLDIER)},
@@ -106,6 +118,8 @@ TEX_PVMTABLE TEXTURELIST_CastleTown[] = {
 
 	{ "CastleTown_Water", &TEXLIST_CastleTown_Water },
 	{ "CastleTown_Sky", &TEXLIST_CastleTown_Sky },
+	{ "CastleTown_Sky_Night", &TEXLIST_CastleTown_Sky_Night },
+	{ "CastleTown_Sky_Eve", &TEXLIST_CastleTown_Sky_Eve },
 
 	{"SOLDIER",(&TEXLIST_NPC_SOLDIER)},
 	{"PRIEST",(&TEXLIST_NPC_PRIEST)},
@@ -143,10 +157,12 @@ void LOAD_Objects()
 void INIT_Objects()
 {
 	ListofPvmList[LevelIDs_Soleanna_Hub ] = TEXTURELIST_CastleTown;
+	objItemTable[LevelIDs_Soleanna_Hub * 8] = &OBJECTLIST_CastleTown;
 	objItemTable[LevelIDs_Soleanna_Hub * 8 + 0] = &OBJECTLIST_CastleTown;
 
 	objItemTable[LevelIDs_Soleanna_Hub * 8 + 1] = &OBJECTLIST_FOREST;
-
+	
+	objItemTable[LevelIDs_Soleanna_Hub * 8 + 2] = &OBJECTLIST_CastleTown;
 	LOAD_Objects();
 
 

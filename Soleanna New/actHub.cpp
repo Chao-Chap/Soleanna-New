@@ -37,6 +37,7 @@ void SETVIEWDATA_CastleTown()
 
 LandTableInfo* LAND_CastleTown00 = nullptr;
 LandTableInfo* LAND_FOREST00 = nullptr;
+LandTableInfo* LAND_CITY00 = nullptr;
 void LANDTABLE_CastleTown()
 {
 
@@ -47,12 +48,15 @@ LoadLandTable(&LAND_FOREST00, "Forest_Landtable", &TEXLIST_FOREST);
 
 objLandTable[LevelIDs_Soleanna_Hub][1] = (_OBJ_LANDTABLE*)LAND_FOREST00->getlandtable();
 
-	
+LoadLandTable(&LAND_CITY00, "City_Landtable", &TEXLIST_City);
+
+objLandTable[LevelIDs_Soleanna_Hub][2] = (_OBJ_LANDTABLE*)LAND_CITY00->getlandtable();
 	
 }
 PL_KILLCOLLI* Castle_deathzones[] = {
   Castlee1_deathzones,
-	Forest_deathzones
+	Forest_deathzones,
+	Death_City
 };
 
 //	Load Deathzones:
@@ -60,7 +64,8 @@ PL_KILLCOLLI* Castle_deathzones[] = {
 void DEATHZONES_CastleTown()
 {
 	KillingCollisionModelsListList[LevelIDs_Soleanna_Hub] = Castle_deathzones;
-	KillingCollisionModelsListList[LevelIDs_Soleanna_Hub] = Castle_deathzones;
+
+
 
 }
 
@@ -69,7 +74,7 @@ void DEATHZONES_CastleTown()
 
 StartPosition STARTPOS_CastleTown00 = { LevelIDs_Soleanna_Hub, 0, { 173.22f, 25.0f, 1458.9f }, 0xC000 };
 StartPosition STARTPOS_CastleTown01 = { LevelIDs_Soleanna_Hub, 1, { 1900.22f, 108.0f, -19.9f }, 0xC000 };
-StartPosition STARTPOS_CastleTown02 = { LevelIDs_Soleanna_Hub, 2, { 173.22f, 25.0f, 1458.9f }, 0xC000 };
+StartPosition STARTPOS_CastleTown02 = { LevelIDs_Soleanna_Hub, 2, { -555.0f, 700.0f, 0.9f }, 0xC000 };
 
 void STARTPOSITIONS_CastleTown()
 {
@@ -87,7 +92,11 @@ void newtitlecard(){
 
 
 
+void initCitymusic()
+{
+	PlayMusic((MusicIDs)MusicID_City);
 
+}
 
 //	Level Init:
 void initCTmusic()
@@ -99,10 +108,12 @@ void CastleTown_Init()
 {
 	
 	DEATHZONES_CastleTown();
-	LoadCamFile(1, "SS04");
-	LoadSetFile(1, "_FOREST-");
 	LoadCamFile(0, "SS04");
 	LoadSetFile(0, "_CastleTown-");
+	LoadCamFile(1, "SS04");
+	LoadSetFile(1, "_FOREST-");
+	LoadCamFile(2, "SS04");
+	LoadSetFile(2, "_CITY-");
 	LANDTABLE_CastleTown();
 
 

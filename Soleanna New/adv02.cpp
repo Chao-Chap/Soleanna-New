@@ -40,7 +40,9 @@ _OBJ_ITEMENTRY OBJECTLIST_Forest_Entries[] = {
 	{ 2, 2, 1, 1000000.0f, 0, NPC_Priest4_Event, "Priesta"}, // ID 31
 	{ 2, 2, 1, 1000000.0f, 0, NPC_Priest5_Event, "Priestb"}, // ID 32
 	{ 2, 2, 1, 1000000.0f, 0, NPC_Priest6_Event, "Priestc"}, // ID 33
+	{ 2, 2, 1, 1000000.0f, 0, NPC_Woman3_Event, "WomanA"}, // ID 34
 };
+
 
 _OBJ_ITEMTABLE OBJECTLIST_FOREST = { LengthOfArray(OBJECTLIST_Forest_Entries), 0, OBJECTLIST_Forest_Entries };
 

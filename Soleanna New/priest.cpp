@@ -63,8 +63,9 @@ const char* PriestForest2_Dialogue[2] = {
 	{ "\aSolaris watches over us always. \nHe kinda needs to learn to respect boundaries."},
 	 { nullptr },
 };
-const char* PriestForest3_Dialogue[2] = {
-	{ "\aWe sing many songs in service to Solaris.\nAnything we can get our hands on that mentions light!"},
+const char* PriestForest3_Dialogue[3] = {
+	{ "\aWe sing many songs in \nservice to Solaris."},
+	{"Anything that mentions light?\nBosh, thats ours now."},
 	 { nullptr },
 };
 

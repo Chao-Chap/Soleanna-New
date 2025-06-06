@@ -29,3 +29,4 @@ void NPC_Priest6_Event(task* tp);
 void NPC_SOLDIER6_Event(task* tp);
 void NPC_SOLDIER7_Event(task* tp);
 void NPC_SOLDIER8_Event(task* tp);
+void NPC_Woman3_Event(task* tp);
