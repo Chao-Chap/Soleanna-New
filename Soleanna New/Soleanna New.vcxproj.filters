@@ -78,6 +78,9 @@
     <ClInclude Include="bomb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="multi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -165,6 +168,15 @@
       <Filter>Source Files\forest</Filter>
     </ClCompile>
     <ClCompile Include="adv02.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Eagle.cpp">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="object-utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="adv00.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

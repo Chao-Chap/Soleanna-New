@@ -26,6 +26,9 @@ NJS_TEXLIST TEXLIST_CastleTown_Sky_Eve = { arrayptrandlength(TEX_CastleTown_Sky_
 NJS_TEXNAME TEX_NPC_SONICMAN[18];
 NJS_TEXLIST  TEXLIST_NPC_SONICMAN = { arrayptrandlengthT(TEX_NPC_SONICMAN, Uint32) };
 
+
+
+
 NJS_TEXNAME TEX_NPC_SOLDIER[10];
 NJS_TEXLIST  TEXLIST_NPC_SOLDIER = { arrayptrandlengthT(TEX_NPC_SOLDIER, Uint32) };
 
@@ -84,6 +87,51 @@ _OBJ_ITEMENTRY OBJECTLIST_CastleTown_Entries[] = {
 };
 
 _OBJ_ITEMTABLE OBJECTLIST_CastleTown = { LengthOfArray(OBJECTLIST_CastleTown_Entries), 0, OBJECTLIST_CastleTown_Entries };
+
+
+
+_OBJ_ITEMENTRY OBJECTLIST_NewCity_Entries[] = {
+	{ 2, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x450370, "O RING" }, // ID 0
+	{ 2, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x79B2F0, "O RING GROUP" }, // ID 1
+	{ 2, 2, 1, 1000000.0f, 0, (TaskFuncPtr)0x7A4C30, "O SPRING GROUND" }, // ID 2
+	{ 2, 2, 1, 1000000.0f, 0, (TaskFuncPtr)0x7A4E50, "O SPRING AIR" }, // ID 3
+	{ 2, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x79F860, "O SPRING TRIPLE" }, // ID 4
+	{ 2, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x7A4450, "O DASH PANEL" }, // ID 5
+	{ 14, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x7A26F0, "O DASH RING" }, // ID 6
+	{ 2, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x4D6F10, "O ITEMBOX" }, // ID 7
+	{ 15, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x4C07D0, "O ITEMBOX AIR" }, // ID 8
+	{ 15, 6, 1, 1000000.0f, 0, (TaskFuncPtr)0x44F540, "O CHECKPOINT" }, // ID 9
+	{ 2, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x46B170, "O CAPSULE" }, // ID 10
+	{ 3, 3, 5, 1000000.0f, 0, (TaskFuncPtr)0x4A3420, "O EMERALD SHARD" }, // ID 11
+	{ 2, 2, 1, 1000000.0f, 0, (TaskFuncPtr)0x7A1AA0, "O TIKAL" }, // ID 12
+	{ 2, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x7A9140, "O TIKAL THIS WAY" }, // ID 13
+	{ 10, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x7A2B60, "O WEED" }, // ID 14
+	{ 2, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x4D4850, "C PUSHWALL" }, // ID 15
+	{ 2, 2, 1, 1000000.0f, 0, (TaskFuncPtr)0x4D4700, "C SPHERE" }, // ID 16
+	{ 2, 2, 1, 1000000.0f, 0, (TaskFuncPtr)0x4D4770, "C CYLINDER" }, // ID 17
+	{ 2, 2, 1, 1000000.0f, 0, (TaskFuncPtr)0x4D47E0, "C CUBE" }, // ID 18
+	{ 2, 2, 1, 1000000.0f, 0, (TaskFuncPtr)0x4D4B70, "C LEDGE" }, // ID 19
+	{ 2, 0, 1, 1000000.0f, 0, (TaskFuncPtr)0x4D4E10, "C NOT UNDERWATER" }, // ID 20
+	{ 2, 3, 5, 1000000.0f, 0, (TaskFuncPtr)0x4B0DF0, "E SPINNER A" }, // ID 21
+	{ 2, 3, 5, 1000000.0f, 0, (TaskFuncPtr)0x4B0F40, "E SPINNER B" }, // ID 22
+	{ 2, 3, 5, 1000000.0f, 0, (TaskFuncPtr)0x4B1090, "E SPINNER C" }, // ID 23
+	{ 2, 3, 5, 1000000.0f, 0, (TaskFuncPtr)0x4AF190, "E UNIDUS A" }, // ID 24
+	{ 2, 3, 5, 1000000.0f, 0, (TaskFuncPtr)0x4AF500, "E UNIDUS B" }, // ID 25
+	{ 2, 3, 1, 1000000.0f, 0, (TaskFuncPtr)0x615200, "O HW BELL" }, // ID 26
+	{ 2, 0, 1, 1000000.0f, 0, (TaskFuncPtr)0x4D4BE0, "BIGWJUMP" }, // ID 27
+	{ 2, 2, 0, 1000000.0f, 0, (TaskFuncPtr)0x640850, "SCENE CHANGE" }, // ID 28
+	{ 2, 2, 1, 1000000.0f, 0, NPC_CITYSOLDIER_Event, "Soldier"}, // ID 29
+	{ 2, 2, 1, 1000000.0f, 0, NPC_PriestCity1_Event, "Priest"}, // ID 30
+	{ 2, 2, 1, 1000000.0f, 0, NPC_PriestCity2_Event, "Priest"}, // ID 31
+	{ 2, 2, 1, 1000000.0f, 0, NPC_WomanCity1_Event, "Woman"}, // ID 32
+	{ 2, 2, 1, 1000000.0f, 0, NPC_WomanCity2_Event, "Woman"}, // ID 33
+};
+
+_OBJ_ITEMTABLE OBJECTLIST_NewCity = { LengthOfArray(OBJECTLIST_NewCity_Entries), 0, OBJECTLIST_NewCity_Entries };
+
+
+
+
 
 //	Texture List:
 
@@ -148,7 +196,6 @@ void LOAD_Objects()
 	LOAD_CastleTown_Skybox();
 	Load_NPC_Priest();
 	Load_NPC_Woman1();
-
 }
 
 
@@ -162,7 +209,7 @@ void INIT_Objects()
 
 	objItemTable[LevelIDs_Soleanna_Hub * 8 + 1] = &OBJECTLIST_FOREST;
 	
-	objItemTable[LevelIDs_Soleanna_Hub * 8 + 2] = &OBJECTLIST_CastleTown;
+	objItemTable[LevelIDs_Soleanna_Hub * 8 + 2] = &OBJECTLIST_NewCity;
 	LOAD_Objects();
 
 

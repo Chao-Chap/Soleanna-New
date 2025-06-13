@@ -68,6 +68,16 @@ const char* PriestForest3_Dialogue[3] = {
 	{"Anything that mentions light?\nBosh, thats ours now."},
 	 { nullptr },
 };
+const char* PriestCity1_Dialogue[3] = {
+	{ "\aDo you think Solaris stays \nin heaven because he too"},
+	{"\afears clipping through the floor?"},
+	 { nullptr },
+};
+const char* PriestCity2_Dialogue[3] = {
+	{ "\aActually, Solaris is not in heaven.\nthey where seperated into two and sealed."},
+	{"\aDivorce is always so sad. \nTheir kids must be devastated!"},
+	 { nullptr },
+};
 
 void NPC_Priest_Event(task* tp)
 {
@@ -198,7 +208,46 @@ void NPC_Priest6_Event(task* tp)
 
 	tp->disp(tp);
 }
+void NPC_PriestCity1_Event(task* tp)
+{
+	tp->disp = DISPLAY_Priest;
+	auto twp = tp->twp;
 
+	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+	{
+
+		if (Controllers[0].PressedButtons & Buttons_Y)
+		{
+			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+
+
+			DisplayHintText(PriestCity1_Dialogue, 120);
+		}
+
+	}
+
+	tp->disp(tp);
+}
+void NPC_PriestCity2_Event(task* tp)
+{
+	tp->disp = DISPLAY_Priest;
+	auto twp = tp->twp;
+
+	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+	{
+
+		if (Controllers[0].PressedButtons & Buttons_Y)
+		{
+			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+
+
+			DisplayHintText(PriestCity2_Dialogue, 120);
+		}
+
+	}
+
+	tp->disp(tp);
+}
 
 void Load_NPC_Priest()
 {

@@ -89,6 +89,7 @@
     <ClInclude Include="IniFile.hpp" />
     <ClInclude Include="leveltask.h" />
     <ClInclude Include="mod.h" />
+    <ClInclude Include="multi.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="objects.h" />
     <ClInclude Include="o_skybox.h" />
@@ -102,6 +103,7 @@
   <ItemGroup>
     <ClCompile Include="actHub.cpp" />
     <ClCompile Include="ActHubForest.cpp" />
+    <ClCompile Include="adv00.cpp" />
     <ClCompile Include="adv02.cpp" />
     <ClCompile Include="AnimationFile.cpp" />
     <ClCompile Include="bomb.cpp" />
@@ -110,11 +112,13 @@
     <ClCompile Include="deathzoneforest.cpp" />
     <ClCompile Include="deathzones.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Eagle.cpp" />
     <ClCompile Include="LandTableInfo.cpp" />
     <ClCompile Include="leveltask.cpp" />
     <ClCompile Include="ModelInfo.cpp" />
     <ClCompile Include="multi.cpp" />
     <ClCompile Include="npc.cpp" />
+    <ClCompile Include="object-utils.cpp" />
     <ClCompile Include="objects.cpp" />
     <ClCompile Include="o_skybox.cpp" />
     <ClCompile Include="paths.cpp" />

@@ -46,6 +46,15 @@ const char* Woman3_Dialogue[4] = {
 	{"I have a podcast, if you're interested."},
 	 { nullptr },
 };
+const char* Woman4_Dialogue[3] = {
+	{ "\aWhy do we have teleport gates AND\ntrains, like, surely the gates are better?"},
+	{"\amaybe we need more gates? \nwho puts them here anyway? Is it the government?"},
+	 { nullptr },
+};
+const char* Womancity1_Dialogue[2] = {
+	{ "\aIt's been a hard day's work of... standing here."},
+	 { nullptr },
+};
 void NPC_Woman1_Event(task* tp)
 {
 	tp->disp = DISPLAY_Woman1;
@@ -101,6 +110,46 @@ void NPC_Woman3_Event(task* tp)
 
 
 			DisplayHintText(Woman3_Dialogue, 120);
+		}
+
+	}
+
+	tp->disp(tp);
+}
+void NPC_WomanCity1_Event(task* tp)
+{
+	tp->disp = DISPLAY_Woman1;
+	auto twp = tp->twp;
+
+	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+	{
+
+		if (Controllers[0].PressedButtons & Buttons_Y)
+		{
+			EV_SetFace(EV_GetPlayer(0), "WWWWWWWWW");
+
+
+			DisplayHintText(Woman4_Dialogue, 120);
+		}
+
+	}
+
+	tp->disp(tp);
+}
+void NPC_WomanCity2_Event(task* tp)
+{
+	tp->disp = DISPLAY_Woman1;
+	auto twp = tp->twp;
+
+	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+	{
+
+		if (Controllers[0].PressedButtons & Buttons_Y)
+		{
+			EV_SetFace(EV_GetPlayer(0), "WWWWWWWWW");
+
+
+			DisplayHintText(Womancity1_Dialogue, 120);
 		}
 
 	}

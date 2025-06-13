@@ -11,23 +11,6 @@ std::string mdlformatfiletypes[] = {
 };
 
 
-void LoadLandTableFile(LandTableInfo** info, const char* name, NJS_TEXLIST* texlist)
-{
-	auto lnd = new LandTableInfo(gHelperFunctions->GetReplaceablePath(name));
-
-	if (lnd->getlandtable() == nullptr)
-	{
-		PrintDebug("[Hill Top] Failed to load geometry file: %s... ", name);
-		delete lnd;
-		*info = nullptr;
-	}
-	else
-	{
-		PrintDebug("[Hill Top] Successfully loaded geometry file: %s... ", name);
-		lnd->getlandtable()->TexList = texlist;
-		*info = lnd;
-	}
-}
 
 NJS_POINT3 LerpPoints(NJS_POINT3* v1, NJS_POINT3* v2, float dist)
 {
@@ -59,35 +42,7 @@ bool CheckCollisionP_num(NJS_POINT3* center, float radius, int player)
 	return playertwp[player] ? CheckCollisionPointSphere(center, &playertwp[player]->pos, radius) : false;
 }
 
-int IsPlayerInRange(NJS_POINT3* center, float range)
-{
-	for (int player = 0; player < MaxPlayers; ++player)
-	{
-		if (!playertwp[player]) continue;
 
-		if (ObjectInRange(&playertwp[player]->pos, center->x, center->y, center->z, range))
-		{
-			return player + 1;
-		}
-	}
-
-	return 0;
-}
-
-int IsPlayerOnGeoCol(task* tp)
-{
-	for (int i = 0; i < MaxPlayers; ++i)
-	{
-		auto pwp = playerpwp[i];
-
-		if (pwp && pwp->ttp == tp)
-		{
-			return i + 1;
-		}
-	}
-
-	return 0;
-}
 
 void ForEveryCollidingPlayer(task* tp, void(__cdecl* function)(task*, taskwk*))
 {
@@ -116,35 +71,6 @@ void ForcePlayerPos(int id, NJS_POINT3* pos)
 	ForcePlayerPos(id, pos->x, pos->y, pos->z);
 }
 
-bool CheckJump(int id)
-{
-	if (PressedButtons[id] & Buttons_A)
-	{
-		auto twp = playertwp[id];
-		auto pwp = playerpwp[id];
-
-		twp->flag = twp->flag & ~(Status_OnColli | Status_Ground) | Status_Attack | Status_Ball;
-		pwp->spd.y = pwp->p.jmp_y_spd;
-
-		switch (TASKWK_CHARID(twp)) {
-		case Characters_Sonic:
-			twp->mode = 8; // jump mode
-			Sonic_Spin((CharObj2*)pwp); // jump animation
-			pwp->work.f = 5.0f;
-			break;
-		case Characters_Tails:
-		case Characters_Knuckles:
-			twp->mode = 6; // jump mode
-			pwp->mj.reqaction = 14; // jump animation
-			pwp->work.f = 2.0f;
-			break;
-		}
-
-		return true;
-	}
-
-	return false;
-}
 
 int GetUVCount(NJS_MESHSET_SADX* meshset)
 {

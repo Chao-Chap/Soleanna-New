@@ -53,8 +53,6 @@ extern "C"
 		// Add a new act to Red Mountain set/cam files (originally 0x210)
 		SetDataThings[LevelIDs_Soleanna_Hub] = 0x3210;
 		CamDataThings[LevelIDs_Soleanna_Hub] = 0x3210;
-
-		
 }
 	__declspec(dllexport) void __cdecl OnFrame()
 	{
@@ -78,6 +76,7 @@ extern "C"
 		}
 
 	}
+
 	__declspec(dllexport) ModInfo SADXModInfo = { ModLoaderVer };
 
 }

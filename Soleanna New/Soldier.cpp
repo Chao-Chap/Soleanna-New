@@ -65,6 +65,17 @@ const char* SoldierForest3Dialogue[3] = {
 	{"\aWhat am I guarding? Nothing is here."},
 	 { nullptr },
 };
+const char* SoldierE102Dialogue[4] = {
+	{"\aAre you one of them fancy new \nAI models? With a body, no less?"},
+	{"\aI used one of you to pass my exams! \nVery useful!"},
+	{"\aWhat do you mean 'Revoking social status?'"},
+	 { nullptr },
+};
+const char* SoldierCity1Dialogue[3] = {
+	{"\aThese gates are a nightmare! \nteleporting is cool, but"},
+	{"\aWhy isn't there a way back?! \nOnce, i got stuck in the mountains for hours!"},
+	 { nullptr },
+};
 
 void NPC_SOLDIER_Event(task* tp)
 {
@@ -248,4 +259,30 @@ void NPC_SOLDIER8_Event(task* tp)
 
 	}
 	tp->disp(tp);
+}
+
+void NPC_CITYSOLDIER_Event(task* tp)
+{
+	tp->disp = DISPLAY_SOLDIER;
+	auto twp = tp->twp;
+
+	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+
+		if (Controllers[0].PressedButtons & Buttons_Y)
+		{
+			const char* const* msg;
+			switch (CurrentCharacter)
+			{
+			case Characters_Gamma:
+				msg = SoldierE102Dialogue;
+				break;
+			default:
+				msg = SoldierCity1Dialogue;
+				break;
+			}
+			DisplayHintText(msg, 120);
+		}
+
+	tp->disp(tp);
+
 }

@@ -30,3 +30,8 @@ void NPC_SOLDIER6_Event(task* tp);
 void NPC_SOLDIER7_Event(task* tp);
 void NPC_SOLDIER8_Event(task* tp);
 void NPC_Woman3_Event(task* tp);
+void NPC_WomanCity1_Event(task* tp);
+void NPC_WomanCity2_Event(task* tp);
+void NPC_PriestCity1_Event(task* tp);
+void NPC_PriestCity2_Event(task* tp);
+void NPC_CITYSOLDIER_Event(task* tp);
