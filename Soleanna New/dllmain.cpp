@@ -60,20 +60,7 @@ extern "C"
 
 		ANIM_Water();
 
-		if (CurrentAct == 0) {
-			initCTmusic();
 
-		}
-
-
-		if (CurrentAct == 1) {
-			initForestmusic();
-
-
-		}
-		if (CurrentAct == 2) {
-			initCitymusic();
-		}
 
 	}
 
