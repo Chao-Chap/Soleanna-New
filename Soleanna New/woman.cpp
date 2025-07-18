@@ -1,13 +1,12 @@
 #include "pch.h"
 #include "weights.h"
-
+#include "sadx-utils.h"
 AnimationFile* DEFAULTFIDLE = nullptr;
 ModelInfo* NPC_Woman1MDL = nullptr;
 
 
 void DISPLAY_Woman1(task* tp)
 {
-
 
 	auto twp = tp->twp;
 
@@ -24,8 +23,9 @@ void DISPLAY_Woman1(task* tp)
 	HelperFunctionsGlobal.Weights->Apply(NPC_Woman1MDL->getweightinfo(), &act, x);
 	njAction(&act, x);
 	njPopMatrix(1u);
-}
 
+	Shadow(twp, .5f);
+}
 
 
 

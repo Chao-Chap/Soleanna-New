@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "weights.h"
+#include "sadx-utils.h"
 int soldierpos;
 AnimationFile* SOLDIERIDLE = nullptr;
 ModelInfo* NPC_SOLDIERMDL = nullptr;
@@ -21,6 +22,7 @@ void DISPLAY_SOLDIER(task* tp)
 	HelperFunctionsGlobal.Weights->Apply(NPC_SOLDIERMDL->getweightinfo(), &soldieract, soldierpos);
 	njAction(&soldieract, soldierpos);
 	njPopMatrix(1u);
+	Shadow(twp, .5f);
 }
 
 

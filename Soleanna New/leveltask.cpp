@@ -20,23 +20,31 @@ void RD_CastleTown(task* tp)
 {
 	auto twp = tp->twp;
 
-	if (!twp->mode)
+	if (twp->mode != CurrentAct + 1)
 	{
+
 		if (CurrentAct == 0) {
+
 			initCTmusic();
-			twp->mode = 0;
+			twp->mode = 1;
+			
 		}
 	
 	
 		if (CurrentAct == 1) {
+	
 			initForestmusic();
-			twp->mode = 1;
+			
+			twp->mode = 2;
 		
 		}
+
 		if (CurrentAct == 2) {
+
 			initCitymusic();
-			twp->mode = 2;
+			twp->mode = 3;
 		}
+
 	}
 		SETVIEWDATA_CastleTown();
 	}

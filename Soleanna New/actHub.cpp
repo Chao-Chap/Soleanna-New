@@ -3,7 +3,7 @@
 #include "paths.h"
 #include "daeth.h"
 #include "memaccess.h"
-
+#include "hub.h"
 #include "SADXEnums.h"
 //	Custom FogData, DrawDistance and SkyboxDrawDistance values:
 
@@ -94,19 +94,23 @@ void newtitlecard(){
 
 void initCitymusic()
 {
-	PlayMusic((MusicIDs)MusicID_City);
 
+	PlayMusic((MusicIDs)MusicID_City);
+	
 }
 
 //	Level Init:
 void initCTmusic()
-{ PlayMusic((MusicIDs)MusicID_CastleTown); 
+{ 
+
+	PlayMusic((MusicIDs)MusicID_CastleTown); 
+
 
 }
 
 void CastleTown_Init()
 {
-	
+
 	DEATHZONES_CastleTown();
 	LoadCamFile(0, "SS04");
 	LoadSetFile(0, "_CastleTown-");

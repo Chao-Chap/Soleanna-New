@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "weights.h"
-
+#include "sadx-utils.h"
 AnimationFile* NPCIDLE = nullptr;
 ModelInfo* NPC_SONICMANMDL = nullptr;
 
@@ -23,6 +23,7 @@ void DISPLAY_SonicMAN(task* tp)
 	HelperFunctionsGlobal.Weights->Apply(NPC_SONICMANMDL->getweightinfo(), &act, x);
 	njAction(&act,x);
 	njPopMatrix(1u);
+	Shadow(twp, .8f);
 }
 
 

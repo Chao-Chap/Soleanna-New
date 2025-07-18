@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "weights.h"
-
+#include "sadx-utils.h"
 AnimationFile* DEFAULTIDLE = nullptr;
 ModelInfo* NPC_PriestMDL = nullptr;
 int x;
@@ -24,6 +24,7 @@ void DISPLAY_Priest(task* tp)
 	HelperFunctionsGlobal.Weights->Apply(NPC_PriestMDL->getweightinfo(), &act, x);
 	njAction(&act, x);
 	njPopMatrix(1u);
+	Shadow(twp, .5f);
 }
 
 

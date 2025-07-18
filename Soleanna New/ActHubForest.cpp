@@ -52,7 +52,10 @@ void SETVIEWDATA_FOREST()
 //	Level Init:
 void initForestmusic()
 {
-	PlayMusic((MusicIDs)MusicID_FOREST);
 
+	PlayMusic((MusicIDs)MusicID_FOREST);
+	
 }
+
+
 
