@@ -57,7 +57,7 @@ const char* Priest4_Dialogue[3] = {
 };
 const char* PriestForest1_Dialogue[3] = {
 	{ "\aI'm a rebelious youth! \nThat's why i joined the church!"},
-	{ "\aThe church is all about... rebelling?\n...I think my worlview might have fell apart."},
+	{ "\aThe church is all about... rebelling?\n...I think my worldview might have fell apart."},
 	 { nullptr },
 };
 const char* PriestForest2_Dialogue[2] = {

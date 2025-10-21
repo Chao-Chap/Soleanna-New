@@ -41,6 +41,7 @@ _OBJ_ITEMENTRY OBJECTLIST_Forest_Entries[] = {
 	{ 2, 2, 1, 1000000.0f, 0, NPC_Priest5_Event, "Priestb"}, // ID 32
 	{ 2, 2, 1, 1000000.0f, 0, NPC_Priest6_Event, "Priestc"}, // ID 33
 	{ 2, 2, 1, 1000000.0f, 0, NPC_Woman3_Event, "WomanA"}, // ID 34
+		{ 2, 2, 1, 1000000.0f, 0, BENCHExec, "BENCH"}, // ID 35  
 };
 
 

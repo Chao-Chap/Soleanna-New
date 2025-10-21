@@ -37,7 +37,6 @@ const char* Soldier2Dialogue[2] = {
 	{ "\aNot much happening today.\n Have you seen the captain?"},
 	 { nullptr },
 };
-
 const char* Soldier3Dialogue[2] = {
 	{ "\aWhy did i become a guard? I mostly like \ngetting paid to stand around most days."},
 	 { nullptr },
@@ -78,7 +77,6 @@ const char* SoldierCity1Dialogue[3] = {
 	{"\aWhy isn't there a way back?! \nOnce, i got stuck in the mountains for hours!"},
 	 { nullptr },
 };
-
 void NPC_SOLDIER_Event(task* tp)
 {
 	tp->disp = DISPLAY_SOLDIER;

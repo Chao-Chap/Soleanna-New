@@ -9,11 +9,6 @@ NJS_TEXLIST  TEXLIST_EAGLE = { arrayptrandlengthT(TEX_EAGLE, Uint32) };
 AnimationFile* EAGLEFLY = nullptr;
 ModelInfo* EAGLEMDL = nullptr;
 CCL_INFO EAGLECOL = { 0, CI_FORM_SPHERE, 0xF0, 0, 0, {0.0f, 0.0f, 0.0f}, 8.0f, 0.0f, 0.0f, 0.0f, 0, 0, 0 };
-void __cdecl CustomObject_Delete(task* obj) {
-	// Remove stuff that the game doesn't automatically
-	// (ie. only needed if you allocate stuff manually: new/delete operators, malloc/free, etc.)
-}
-
 void __cdecl Eagle_Display(task* tp) {
 	if (!MissedFrames) {
 		// Handle display

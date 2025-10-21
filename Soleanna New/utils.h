@@ -39,9 +39,7 @@ void LoadLandTable(LandTableInfo** info, const char* name, NJS_TEXLIST* texlist)
 
 ModelInfo* LoadChunkModel(const char* name);
 
-inline AnimationFile* LoadANM(const char* type, const char* name);
-AnimationFile* LoadObjectAnim(const char* name);
-
+void LoadAnimation(AnimationFile** info, const char* name, const HelperFunctions& helperFunctions);
 
 //	Functions for rendering Chunk Models:
 

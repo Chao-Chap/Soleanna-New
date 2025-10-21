@@ -41,6 +41,9 @@ NJS_TEXLIST  TEXLIST_NPC_WOMAN1 = { arrayptrandlengthT(TEX_NPC_WOMAN1, Uint32) }
 
 NJS_TEXNAME TEX_CastleTown_Water[14] = { 0 };
 NJS_TEXLIST TEXLIST_CastleTown_Water = { arrayptrandlength(TEX_CastleTown_Water) };
+
+NJS_TEXNAME TEX_BENCH[18];
+NJS_TEXLIST  TEXLIST_BENCH = { arrayptrandlengthT(TEX_BENCH, Uint32) };
 //	Object List:
 
 _OBJ_ITEMENTRY OBJECTLIST_CastleTown_Entries[] = {
@@ -84,6 +87,7 @@ _OBJ_ITEMENTRY OBJECTLIST_CastleTown_Entries[] = {
 	{ 2, 2, 1, 1000000.0f, 0, NPC_Priest3_Event, "Priest3"}, // ID 37
 	{ 2, 2, 1, 1000000.0f, 0, NPC_Woman1_Event, "Woman1"}, // ID 38
 	{ 2, 2, 1, 1000000.0f, 0, NPC_Woman2_Event, "Woman2"}, // ID 39
+	{ 2, 2, 1, 1000000.0f, 0, BENCHExec, "BENCH"}, // ID 40
 };
 
 _OBJ_ITEMTABLE OBJECTLIST_CastleTown = { LengthOfArray(OBJECTLIST_CastleTown_Entries), 0, OBJECTLIST_CastleTown_Entries };
@@ -125,6 +129,7 @@ _OBJ_ITEMENTRY OBJECTLIST_NewCity_Entries[] = {
 	{ 2, 2, 1, 1000000.0f, 0, NPC_PriestCity2_Event, "Priest"}, // ID 31
 	{ 2, 2, 1, 1000000.0f, 0, NPC_WomanCity1_Event, "Woman"}, // ID 32
 	{ 2, 2, 1, 1000000.0f, 0, NPC_WomanCity2_Event, "Woman"}, // ID 33
+	{ 2, 2, 1, 1000000.0f, 0, BENCHExec, "BENCH"}, // ID 34
 };
 
 _OBJ_ITEMTABLE OBJECTLIST_NewCity = { LengthOfArray(OBJECTLIST_NewCity_Entries), 0, OBJECTLIST_NewCity_Entries };
@@ -142,6 +147,8 @@ TEX_PVMTABLE TEXTURELIST_CastleTown[] = {
 	{ "CastleTown_Sky", &TEXLIST_CastleTown_Sky },
 	{ "CastleTown_Sky_Night", &TEXLIST_CastleTown_Sky_Night },
 	{ "CastleTown_Sky_Eve", &TEXLIST_CastleTown_Sky_Eve },
+
+	{ "Bench", &TEXLIST_BENCH},
 
 	{"NPC_SONICMANTEX",(&TEXLIST_NPC_SONICMAN)},
 	{"SOLDIER",(&TEXLIST_NPC_SOLDIER)},
@@ -168,6 +175,9 @@ TEX_PVMTABLE TEXTURELIST_CastleTown[] = {
 	{ "CastleTown_Sky", &TEXLIST_CastleTown_Sky },
 	{ "CastleTown_Sky_Night", &TEXLIST_CastleTown_Sky_Night },
 	{ "CastleTown_Sky_Eve", &TEXLIST_CastleTown_Sky_Eve },
+
+	{ "Bench", &TEXLIST_BENCH},
+
 
 	{"SOLDIER",(&TEXLIST_NPC_SOLDIER)},
 	{"PRIEST",(&TEXLIST_NPC_PRIEST)},
@@ -196,6 +206,7 @@ void LOAD_Objects()
 	LOAD_CastleTown_Skybox();
 	Load_NPC_Priest();
 	Load_NPC_Woman1();
+	LOAD_Bench();
 }
 
 

@@ -35,3 +35,5 @@ void NPC_WomanCity2_Event(task* tp);
 void NPC_PriestCity1_Event(task* tp);
 void NPC_PriestCity2_Event(task* tp);
 void NPC_CITYSOLDIER_Event(task* tp);
+void BENCHExec(task* tp);
+void LOAD_Bench();

@@ -167,17 +167,20 @@
     <ClCompile Include="Citydeath.cpp">
       <Filter>Source Files\forest</Filter>
     </ClCompile>
-    <ClCompile Include="adv02.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Eagle.cpp">
       <Filter>Source Files\object</Filter>
     </ClCompile>
     <ClCompile Include="object-utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BenchBenchBench.cpp">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
     <ClCompile Include="adv00.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="adv02.cpp">
+      <Filter>Source Files\forest</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
