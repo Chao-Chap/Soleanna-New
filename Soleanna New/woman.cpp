@@ -60,7 +60,7 @@ void NPC_Woman1_Event(task* tp)
 	tp->disp = DISPLAY_Woman1;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 		if (Controllers[0].PressedButtons & Buttons_Y)
@@ -81,7 +81,7 @@ void NPC_Woman2_Event(task* tp)
 	tp->disp = DISPLAY_Woman1;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 		if (Controllers[0].PressedButtons & Buttons_Y)
@@ -101,7 +101,7 @@ void NPC_Woman3_Event(task* tp)
 	tp->disp = DISPLAY_Woman1;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 		if (Controllers[0].PressedButtons & Buttons_Y)
@@ -121,7 +121,7 @@ void NPC_WomanCity1_Event(task* tp)
 	tp->disp = DISPLAY_Woman1;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 		if (Controllers[0].PressedButtons & Buttons_Y)
@@ -141,7 +141,7 @@ void NPC_WomanCity2_Event(task* tp)
 	tp->disp = DISPLAY_Woman1;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 		if (Controllers[0].PressedButtons & Buttons_Y)

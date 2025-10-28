@@ -65,7 +65,7 @@ void NPC_SONICMAN_Event(task* tp)
 	tp->disp = DISPLAY_SonicMAN;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 	

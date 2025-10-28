@@ -4,44 +4,86 @@
 #include "objects.h"
 void WeSittinSonicNow(taskwk* twp, playerwk* pwp)
 {
-	twp->mode = 45;
-	pwp->mj.reqaction = 65;
+	for (int i = 0; i < 4; ++i) // or playertwp.size() to loop for the whole player table
+	{
+		auto ptwp = playertwp[i];
 
+		if (ptwp) // check if the player exists
+		{
+			twp->mode = 45;
+			pwp->mj.reqaction = 65;
+		}
+	}
 
 }
 void WeSittinMilesNow(taskwk* twp, playerwk* pwp)
 {
-	twp->mode = 43;
-	pwp->mj.reqaction = 89;
+	for (int i = 0; i < 4; ++i) // or playertwp.size() to loop for the whole player table
+	{
+		auto ptwp = playertwp[i];
 
+		if (ptwp) // check if the player exists
+		{
+			twp->mode = 43;
+			pwp->mj.reqaction = 89;
+		}
+	}
 
 }
 void WeSittinKnuxNow(taskwk* twp, playerwk* pwp)
 {
-	twp->mode = 52;
-	pwp->mj.reqaction = 36;
+	for (int i = 0; i < 4; ++i) // or playertwp.size() to loop for the whole player table
+	{
+		auto ptwp = playertwp[i];
 
+		if (ptwp) // check if the player exists
+		{
+			twp->mode = 52;
+			pwp->mj.reqaction = 36;
+		}
+	}
 
 }
 void WeSittinAmyNow(taskwk* twp, playerwk* pwp)
 {
-	twp->mode = 48;
-	pwp->mj.reqaction = 76;
+	for (int i = 0; i < 4; ++i) // or playertwp.size() to loop for the whole player table
+	{
+		auto ptwp = playertwp[i];
 
+		if (ptwp) // check if the player exists
+		{
+			twp->mode = 48;
+			pwp->mj.reqaction = 76;
+		}
+	}
 
 }
 void WeSittinGammaNow(taskwk* twp, playerwk* pwp)
 {
-	twp->mode = 53;
-	pwp->mj.reqaction = 72;
+	for (int i = 0; i < 4; ++i) // or playertwp.size() to loop for the whole player table
+	{
+		auto ptwp = playertwp[i];
 
+		if (ptwp) // check if the player exists
+		{
+			twp->mode = 53;
+			pwp->mj.reqaction = 72;
+		}
+	}
 
 }
 void WeSittinBigNow(taskwk* twp, playerwk* pwp)
 {
-	twp->mode = 55;
-	pwp->mj.reqaction = 96;
-	
+	for (int i = 0; i < 4; ++i) // or playertwp.size() to loop for the whole player table
+	{
+		auto ptwp = playertwp[i];
+
+		if (ptwp) // check if the player exists
+		{
+			twp->mode = 55;
+			pwp->mj.reqaction = 96;
+		}
+	}
 
 }
 ModelInfo* BENCHMDL = nullptr;
@@ -73,10 +115,11 @@ void BENCHExec(task* tp)
 	{
 		auto ptwp = playertwp[i];
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+
+	if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-			if (playerpwp[i]) {
+			if (playerpwp) {
 				if (Controllers[i].PressedButtons & Buttons_Y)
 				{
 

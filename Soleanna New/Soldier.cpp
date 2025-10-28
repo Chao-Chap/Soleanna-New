@@ -37,6 +37,7 @@ const char* Soldier2Dialogue[2] = {
 	{ "\aNot much happening today.\n Have you seen the captain?"},
 	 { nullptr },
 };
+
 const char* Soldier3Dialogue[2] = {
 	{ "\aWhy did i become a guard? I mostly like \ngetting paid to stand around most days."},
 	 { nullptr },
@@ -77,12 +78,13 @@ const char* SoldierCity1Dialogue[3] = {
 	{"\aWhy isn't there a way back?! \nOnce, i got stuck in the mountains for hours!"},
 	 { nullptr },
 };
+
 void NPC_SOLDIER_Event(task* tp)
 {
 	tp->disp = DISPLAY_SOLDIER;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 
@@ -114,7 +116,7 @@ void NPC_SOLDIER2_Event(task* tp)
 
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 
@@ -136,7 +138,7 @@ void NPC_SOLDIER3_Event(task* tp)
 	tp->disp = DISPLAY_SOLDIER;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 
@@ -158,7 +160,7 @@ void NPC_SOLDIER4_Event(task* tp)
 	tp->disp = DISPLAY_SOLDIER;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 
@@ -180,7 +182,7 @@ void NPC_SOLDIER5_Event(task* tp)
 	tp->disp = DISPLAY_SOLDIER;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 
@@ -202,7 +204,7 @@ void NPC_SOLDIER6_Event(task* tp)
 	tp->disp = DISPLAY_SOLDIER;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 
@@ -222,7 +224,7 @@ void NPC_SOLDIER6_Event(task* tp)
 	tp->disp = DISPLAY_SOLDIER;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 
@@ -244,7 +246,7 @@ void NPC_SOLDIER8_Event(task* tp)
 	tp->disp = DISPLAY_SOLDIER;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 
@@ -266,7 +268,7 @@ void NPC_CITYSOLDIER_Event(task* tp)
 	tp->disp = DISPLAY_SOLDIER;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 
 		if (Controllers[0].PressedButtons & Buttons_Y)
 		{

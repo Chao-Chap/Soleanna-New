@@ -85,9 +85,10 @@ void NPC_Priest_Event(task* tp)
 	tp->disp = DISPLAY_Priest;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i)
+		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
 			const char* const* msg;
 			switch (CurrentCharacter)
@@ -113,10 +114,11 @@ void NPC_Priest2_Event(task* tp)
 	tp->disp = DISPLAY_Priest;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i)
+			if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
 			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
 
@@ -133,10 +135,11 @@ void NPC_Priest3_Event(task* tp)
 	tp->disp = DISPLAY_Priest;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i)
+			if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
 			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
 
@@ -153,10 +156,11 @@ void NPC_Priest4_Event(task* tp)
 	tp->disp = DISPLAY_Priest;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+	for (int i = 0; i < 4; ++i)
+		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
 			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
 
@@ -173,10 +177,10 @@ void NPC_Priest5_Event(task* tp)
 	tp->disp = DISPLAY_Priest;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
 			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
 
@@ -194,10 +198,10 @@ void NPC_Priest6_Event(task* tp)
 	tp->disp = DISPLAY_Priest;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
 			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
 
@@ -214,10 +218,10 @@ void NPC_PriestCity1_Event(task* tp)
 	tp->disp = DISPLAY_Priest;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
 			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
 
@@ -234,10 +238,11 @@ void NPC_PriestCity2_Event(task* tp)
 	tp->disp = DISPLAY_Priest;
 	auto twp = tp->twp;
 
-	if (IsPlayerInsideSphere(&tp->twp->pos, 30))
+		for (int i = 0; i < 4; ++i)
+			if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
 			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
 
