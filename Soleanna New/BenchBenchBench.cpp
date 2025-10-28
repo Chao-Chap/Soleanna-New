@@ -122,7 +122,7 @@ void BENCHExec(task* tp)
 			if (playerpwp) {
 				if (Controllers[i].PressedButtons & Buttons_Y)
 				{
-
+					ptwp->flag &= ~Status_Ball;
 
 					switch (playertwp[i]->counter.b[1])
 					{

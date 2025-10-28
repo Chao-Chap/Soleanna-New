@@ -41,18 +41,18 @@ const char* Woman2_Dialogue[3] = {
 	 { nullptr },
 };
 const char* Woman3_Dialogue[4] = {
-	{ "\aI used to pray to Solaris, but then I realized religion \nwas a tool of opression."},
+	{ "\aI used to pray to Solaris, but then I \nrealized religion was a tool of opression."},
 	{"It's all bullshit."},
 	{"I have a podcast, if you're interested."},
 	 { nullptr },
 };
 const char* Woman4_Dialogue[3] = {
-	{ "\aWhy do we have teleport gates AND\ntrains, like, surely the gates are better?"},
-	{"\amaybe we need more gates? \nwho puts them here anyway? Is it the government?"},
+	{ "\aWhy do we have teleport gates \nAND trains surely the gates are better?"},
+	{"\amaybe we need more gates? \nwho puts them here anyway?"},
 	 { nullptr },
 };
 const char* Womancity1_Dialogue[2] = {
-	{ "\aIt's been a hard day's work of... standing here."},
+	{ "\aIt's been a hard day's work of... \nstanding here."},
 	 { nullptr },
 };
 void NPC_Woman1_Event(task* tp)
@@ -63,9 +63,9 @@ void NPC_Woman1_Event(task* tp)
 		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWW");
 
 
 			DisplayHintText(Woman1_Dialogue, 120);
@@ -84,9 +84,9 @@ void NPC_Woman2_Event(task* tp)
 		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWJ");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWJ");
 
 
 			DisplayHintText(Woman2_Dialogue, 120);
@@ -104,9 +104,9 @@ void NPC_Woman3_Event(task* tp)
 		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWWWW");
 
 
 			DisplayHintText(Woman3_Dialogue, 120);
@@ -124,9 +124,9 @@ void NPC_WomanCity1_Event(task* tp)
 		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWWWW");
 
 
 			DisplayHintText(Woman4_Dialogue, 120);
@@ -144,9 +144,9 @@ void NPC_WomanCity2_Event(task* tp)
 		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWWWW");
 
 
 			DisplayHintText(Womancity1_Dialogue, 120);

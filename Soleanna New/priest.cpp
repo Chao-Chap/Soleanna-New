@@ -52,16 +52,16 @@ const char* Priest3_Dialogue[3] = {
 };
 const char* Priest4_Dialogue[3] = {
 	{ "\aWhat do we do at our rituals to Solaris?\nThat is an interesting question."},
-	{ "\aIt's very gay. So much homosexual activity. \nHe's all rainbow-y, after all."},
+	{ "\aIt's very gay. So much homosexual \nactivity. He's all rainbow-y, after all."},
 	 { nullptr },
 };
 const char* PriestForest1_Dialogue[3] = {
 	{ "\aI'm a rebelious youth! \nThat's why i joined the church!"},
-	{ "\aThe church is all about... rebelling?\n...I think my worldview might have fell apart."},
+	{ "\aThe church is all about... rebelling?\nI think my worldview might have fell apart."},
 	 { nullptr },
 };
 const char* PriestForest2_Dialogue[2] = {
-	{ "\aSolaris watches over us always. \nHe kinda needs to learn to respect boundaries."},
+	{ "\aSolaris watches over us always. He kinda \nneeds to learn to respect boundaries."},
 	 { nullptr },
 };
 const char* PriestForest3_Dialogue[3] = {
@@ -75,7 +75,7 @@ const char* PriestCity1_Dialogue[3] = {
 	 { nullptr },
 };
 const char* PriestCity2_Dialogue[3] = {
-	{ "\aActually, Solaris is not in heaven.\nthey where seperated into two and sealed."},
+	{ "\aActually, Solaris is not in heaven.they \nwhere seperated into two and sealed."},
 	{"\aDivorce is always so sad. \nTheir kids must be devastated!"},
 	 { nullptr },
 };
@@ -120,7 +120,7 @@ void NPC_Priest2_Event(task* tp)
 
 		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWW");
 
 
 			DisplayHintText(Priest2_Dialogue, 120);
@@ -141,7 +141,7 @@ void NPC_Priest3_Event(task* tp)
 
 		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWW");
 
 
 			DisplayHintText(Priest4_Dialogue, 120);
@@ -162,7 +162,7 @@ void NPC_Priest4_Event(task* tp)
 
 		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWW");
 
 
 			DisplayHintText(PriestForest1_Dialogue, 120);
@@ -178,11 +178,12 @@ void NPC_Priest5_Event(task* tp)
 	auto twp = tp->twp;
 
 		for (int i = 0; i < 4; ++i)
+			if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWW");
 
 
 			DisplayHintText(PriestForest2_Dialogue, 120);
@@ -199,11 +200,12 @@ void NPC_Priest6_Event(task* tp)
 	auto twp = tp->twp;
 
 		for (int i = 0; i < 4; ++i)
+			if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWW");
 
 
 			DisplayHintText(PriestForest3_Dialogue, 120);
@@ -219,11 +221,12 @@ void NPC_PriestCity1_Event(task* tp)
 	auto twp = tp->twp;
 
 		for (int i = 0; i < 4; ++i)
+			if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 	{
 
 		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWW");
 
 
 			DisplayHintText(PriestCity1_Dialogue, 120);
@@ -244,7 +247,7 @@ void NPC_PriestCity2_Event(task* tp)
 
 		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWWWW");
 
 
 			DisplayHintText(PriestCity2_Dialogue, 120);

@@ -69,9 +69,9 @@ void NPC_SONICMAN_Event(task* tp)
 	{
 
 	
-	if (Controllers[0].PressedButtons & Buttons_Y)
+	if (Controllers[i].PressedButtons & Buttons_Y)
 	{
-		EV_SetFace(EV_GetPlayer(0), "WWWWWWW");
+		EV_SetFace(	EV_GetPlayer(i), "WWWWWWW");
 		
 	
 		DisplayHintText(SonicManDialogue1, 120);

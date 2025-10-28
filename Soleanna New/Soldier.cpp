@@ -39,11 +39,12 @@ const char* Soldier2Dialogue[2] = {
 };
 
 const char* Soldier3Dialogue[2] = {
-	{ "\aWhy did i become a guard? I mostly like \ngetting paid to stand around most days."},
+	{ "\aWhy did i become a guard? I mostly\nlike getting paid to stand around."},
 	 { nullptr },
 };
-const char* Soldier4Dialogue[2] = {
-	{ "\aI'm 'getting down with the youth' as they say! \nThe miltary is so gigachad and glory-pilled!"},
+const char* Soldier4Dialogue[3] = {
+	{ "\aI'm 'getting down with the youth'\nas they say!"},
+	{ "\a The miltary is so \ngigachad and glory - pilled!"},
 	 { nullptr },
 };
 const char* Soldier5Dialogue[3] = {
@@ -73,9 +74,10 @@ const char* SoldierE102Dialogue[4] = {
 	{"\aWhat do you mean 'Revoking social status?'"},
 	 { nullptr },
 };
-const char* SoldierCity1Dialogue[3] = {
+const char* SoldierCity1Dialogue[4] = {
 	{"\aThese gates are a nightmare! \nteleporting is cool, but"},
-	{"\aWhy isn't there a way back?! \nOnce, i got stuck in the mountains for hours!"},
+	{"\aWhy isn't there a way back?!"},
+		{"Once, i got stuck in the \nmountains for hours!"},
 	 { nullptr },
 };
 
@@ -88,9 +90,9 @@ void NPC_SOLDIER_Event(task* tp)
 	{
 
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWW");
 
 
 			DisplayHintText(Soldier1Dialogue, 120);
@@ -120,9 +122,9 @@ void NPC_SOLDIER2_Event(task* tp)
 	{
 
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWW");
 
 
 			DisplayHintText(Soldier2Dialogue, 120);
@@ -142,9 +144,9 @@ void NPC_SOLDIER3_Event(task* tp)
 	{
 
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWW");
 
 
 			DisplayHintText(Soldier3Dialogue, 120);
@@ -164,9 +166,9 @@ void NPC_SOLDIER4_Event(task* tp)
 	{
 
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWW");
 
 
 			DisplayHintText(Soldier4Dialogue, 120);
@@ -186,9 +188,9 @@ void NPC_SOLDIER5_Event(task* tp)
 	{
 
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWW");
 
 
 			DisplayHintText(Soldier5Dialogue, 120);
@@ -208,9 +210,9 @@ void NPC_SOLDIER6_Event(task* tp)
 	{
 
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWW");
 
 
 			DisplayHintText(SoldierForest1Dialogue, 120);
@@ -228,9 +230,9 @@ void NPC_SOLDIER6_Event(task* tp)
 	{
 
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWW");
 
 
 			DisplayHintText(SoldierForest2Dialogue, 120);
@@ -250,9 +252,9 @@ void NPC_SOLDIER8_Event(task* tp)
 	{
 
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
-			EV_SetFace(EV_GetPlayer(0), "WWWWW");
+			EV_SetFace(	EV_GetPlayer(i), "WWWWW");
 
 
 			DisplayHintText(SoldierForest3Dialogue, 120);
@@ -268,9 +270,10 @@ void NPC_CITYSOLDIER_Event(task* tp)
 	tp->disp = DISPLAY_SOLDIER;
 	auto twp = tp->twp;
 
-		for (int i = 0; i < 4; ++i) 		if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
+		for (int i = 0; i < 4; ++i) 	
+			if (IsPlayerInsideSphere(&tp->twp->pos, 30) == i + 1)
 
-		if (Controllers[0].PressedButtons & Buttons_Y)
+		if (Controllers[i].PressedButtons & Buttons_Y)
 		{
 			const char* const* msg;
 			switch (CurrentCharacter)
