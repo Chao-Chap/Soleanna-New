@@ -131,12 +131,15 @@
     <ClCompile Include="priest.cpp" />
     <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="SPLINEKDV.cPP" />
+    <ClCompile Include="stg01.cpp" />
     <ClCompile Include="TextConv.cpp" />
     <ClCompile Include="trainspline.cpp" />
     <ClCompile Include="Untitled2.cpp" />
     <ClCompile Include="utils.cpp" />
     <ClCompile Include="weight.cpp" />
     <ClCompile Include="woman.cpp" />
+    <ClCompile Include="wvo.cpp" />
+    <ClCompile Include="wvoleveltask.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

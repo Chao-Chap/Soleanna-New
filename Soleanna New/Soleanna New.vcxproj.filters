@@ -22,6 +22,9 @@
     <Filter Include="Source Files\object">
       <UniqueIdentifier>{de776faf-c9af-4593-a7c6-519fbf10050c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\wvo">
+      <UniqueIdentifier>{a5dc12f0-42c4-4d15-bcd7-c9d52296a970}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -89,9 +92,6 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Untitled2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dtd spline.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -114,9 +114,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TextConv.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="leveltask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils.cpp">
@@ -181,6 +178,21 @@
     </ClCompile>
     <ClCompile Include="adv02.cpp">
       <Filter>Source Files\forest</Filter>
+    </ClCompile>
+    <ClCompile Include="wvo.cpp">
+      <Filter>Source Files\wvo</Filter>
+    </ClCompile>
+    <ClCompile Include="leveltask.cpp">
+      <Filter>Source Files\town</Filter>
+    </ClCompile>
+    <ClCompile Include="stg01.cpp">
+      <Filter>Source Files\wvo</Filter>
+    </ClCompile>
+    <ClCompile Include="wvoleveltask.cpp">
+      <Filter>Source Files\wvo</Filter>
+    </ClCompile>
+    <ClCompile Include="Untitled2.cpp">
+      <Filter>Source Files\wvo</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,9 +1,13 @@
 #pragma once
 void SETVIEWDATA_CastleTown();
+void SETVIEWDATA_wvo();
 void CastleTown_Init();
+void INIT_LevelTaskWvo();
+void LANDTABLE_wvo();
 PL_KILLCOLLI* Castle_deathzones[];
 void DEATHZONES_CastleTown();
 void STARTPOSITIONS_CastleTown();
+void STARTPOSITIONS_wvo();
 void newtitlecard();
 void initForestmusic();
 void FOREST_Init();

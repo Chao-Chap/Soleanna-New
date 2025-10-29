@@ -11,6 +11,7 @@ void ANIM_Water()
 	TEXLIST_CastleTown.textures[295].texaddr = TEXLIST_CastleTown_Water.textures[(FrameCounter / 2) % (LengthOfArray(TEX_CastleTown_Water))].texaddr; // Water Animation
 	TEXLIST_FOREST.textures[84].texaddr = TEXLIST_CastleTown_Water.textures[(FrameCounter / 2) % (LengthOfArray(TEX_CastleTown_Water))].texaddr; // Water Animation
 	TEXLIST_City.textures[625].texaddr = TEXLIST_CastleTown_Water.textures[(FrameCounter / 2) % (LengthOfArray(TEX_CastleTown_Water))].texaddr; // Water Animation
+	TEXLIST_wvo.textures[149].texaddr = TEXLIST_CastleTown_Water.textures[(FrameCounter / 2) % (LengthOfArray(TEX_CastleTown_Water))].texaddr; // Water Animation
 }
 
 

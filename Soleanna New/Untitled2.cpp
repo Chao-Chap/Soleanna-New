@@ -247,3 +247,5 @@ LoopHead* untitled2_list[] = {
   &untitled2, &spline2, &spline3, &spline4, 
  nullptr
 };
+
+PathDataPtr PATHDATA_BEACH00 = { levelact(LevelIDs_Soleanna_Levels1, 0), untitled2_list};

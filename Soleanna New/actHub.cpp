@@ -149,5 +149,25 @@ void LoadingFunctionProxy()
 
 
 	}
+	if (CurrentLevel == LevelIDs_Soleanna_Levels1)
+	{
+		STARTPOSITIONS_wvo();
+		SETVIEWDATA_wvo();
+		wvo_Init();
+		CurrentLevel = LevelIDs_StationSquare;
+		LoadLevelObjTextures();
+		CurrentLevel = LevelIDs_Soleanna_Levels1;
 
+
+
+
+
+
+
+
+		//LoadLevelTextures(LevelAndActIDs_StationSquare4);
+		LoadLevelObjTextures();
+
+
+	}
 }

@@ -11,6 +11,7 @@
 #include "bomb.h"
 int MusicID_CastleTown;
 int MusicID_FOREST;
+int MusicID_wvo;
 int MusicID_City;
 const HelperFunctions* gHelperFunctions;
 
@@ -35,8 +36,11 @@ extern "C"
 		MusicInfo BGM_City{ "city", 1 };
 
 		MusicID_City = helperFunctions.RegisterMusicFile(BGM_City);
-		LoadingFunctionProxy();
 
+		MusicInfo BGM_wvo{ "wvo", 1 };
+
+		MusicID_wvo = helperFunctions.RegisterMusicFile(BGM_wvo);
+		LoadingFunctionProxy();
 		ModPath = path;
 		HelperFunctionsGlobal = helperFunctions;
 		WriteData((char*)0x719292, (char)3);
@@ -48,11 +52,16 @@ extern "C"
 		WriteData<1>((int*)0x004237DE, 0xD4);
 		*(float*)0x7E9624 = -10000;
 		INIT_LevelTask();
+		INIT_LevelTaskWvo();
 		newtitlecard();
 		INIT_Objects();
+		INIT_WVOObjects();
+		PATHS_wvo();
 		// Add a new act to Red Mountain set/cam files (originally 0x210)
 		SetDataThings[LevelIDs_Soleanna_Hub] = 0x3210;
 		CamDataThings[LevelIDs_Soleanna_Hub] = 0x3210;
+		SetDataThings[LevelIDs_Soleanna_Levels1] = 0x3210;
+		CamDataThings[LevelIDs_Soleanna_Levels1] = 0x3210;
 }
 	__declspec(dllexport) void __cdecl OnFrame()
 	{

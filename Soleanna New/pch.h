@@ -15,7 +15,7 @@
 #include "AnimationFile.h"
 
 #include "IniFile.hpp"
-
+void initwvomusic();
 #include "mod.h"
 
 #include "leveltask.h"	
@@ -26,4 +26,5 @@
 #include "weights.h"
 #include "objects.h"
 #define LevelIDs_Soleanna_Hub 30
+#define LevelIDs_Soleanna_Levels1 11
 #endif
