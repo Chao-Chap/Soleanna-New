@@ -22,8 +22,8 @@ void DISPLAY_CastleTown_Skybox(task* tp)
     DisableFog();
     njPushMatrix(0);
 
-    njTranslate(0, 0.0f, -1000.0f, 0.0f);
-    njScale(0,3.0f, 3.0f, 3.0f);
+    njTranslate(0, 0.0f, -1500.0f, 0.0f);
+    njScale(0,5.0f, 5.0f, 5.0f);
 
     DrawModel(MDL_CastleTown_Skybox->getmodel()->basicdxmodel);
 
@@ -47,8 +47,8 @@ void DISPLAY_CastleTown_Skybox_Eve(task* tp)
     DisableFog();
     njPushMatrix(0);
 
-    njTranslate(0, 0.0f, -1000.0f, 0.0f);
-    njScale(0, 3.0f, 3.0f, 3.0f);
+    njTranslate(0, 0.0f, -1500.0f, 0.0f);
+    njScale(0, 5.0f, 5.0f, 5.0f);
 
     DrawModel(MDL_CastleTown_Skybox->getmodel()->basicdxmodel);
 
@@ -72,8 +72,8 @@ void DISPLAY_CastleTown_Skybox_Night(task* tp)
     DisableFog();
     njPushMatrix(0);
 
-    njTranslate(0, 0.0f, -1000.0f, 0.0f);
-    njScale(0, 3.0f, 3.0f, 3.0f);
+    njTranslate(0, 0.0f, -1500.0f, 0.0f);
+    njScale(0, 5.0f, 5.0f, 5.0f);
 
     DrawModel(MDL_CastleTown_Skybox->getmodel()->basicdxmodel);
 

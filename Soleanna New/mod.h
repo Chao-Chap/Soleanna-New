@@ -15,4 +15,5 @@ extern void LoadingFunctionProxy2();
 extern PathDataPtr PATHDATA_BEACH00;
 extern void PATHS_wvo();
 
+
 void wvo_Init();

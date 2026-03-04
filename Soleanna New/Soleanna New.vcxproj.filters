@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\forest">
-      <UniqueIdentifier>{c20c5aa8-64db-4132-88a8-9abd7371d7f1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\town">
       <UniqueIdentifier>{e28bbb6c-c48f-41b4-9235-c4bf8a34f563}</UniqueIdentifier>
     </Filter>
@@ -24,6 +21,12 @@
     </Filter>
     <Filter Include="Source Files\wvo">
       <UniqueIdentifier>{a5dc12f0-42c4-4d15-bcd7-c9d52296a970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ability">
+      <UniqueIdentifier>{fbe425ab-a961-4812-97d7-430d104462d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\forest">
+      <UniqueIdentifier>{c20c5aa8-64db-4132-88a8-9abd7371d7f1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +87,9 @@
     <ClInclude Include="multi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="braclet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -123,9 +129,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AnimationFile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bomb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ActHubForest.cpp">
@@ -193,6 +196,15 @@
     </ClCompile>
     <ClCompile Include="Untitled2.cpp">
       <Filter>Source Files\wvo</Filter>
+    </ClCompile>
+    <ClCompile Include="wavekill.cpp">
+      <Filter>Source Files\wvo</Filter>
+    </ClCompile>
+    <ClCompile Include="bomb.cpp">
+      <Filter>Source Files\ability</Filter>
+    </ClCompile>
+    <ClCompile Include="braclet.cpp">
+      <Filter>Source Files\ability</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

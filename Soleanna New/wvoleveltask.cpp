@@ -19,10 +19,10 @@ void RD_WVO(task* tp)
 
 			initwvomusic();
 			twp->mode = 1;
-
+			
 		}
 
-
+		
 	}
 	SETVIEWDATA_wvo();
 }

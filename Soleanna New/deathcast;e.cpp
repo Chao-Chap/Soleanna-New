@@ -32,7 +32,7 @@ NJS_VECTOR normal_00000040[] = {
 
 NJS_MODEL_SADX attach_027BAC5C = { vertex_00000010, normal_00000040, LengthOfArray<Sint32>(vertex_00000010), meshlist_0000007C, matlist_00000094, LengthOfArray<Uint16>(meshlist_0000007C), LengthOfArray<Uint16>(matlist_00000094), { -2990.025f, -127.28204f, -1702.5537f }, 11949.513f, NULL };
 
-NJS_OBJECT object_027BAC88 = { NJD_EVAL_UNIT_ANG | NJD_EVAL_UNIT_SCL | NJD_EVAL_BREAK, &attach_027BAC5C, 0, 0, 0, 0, 0, 0, 2, 1, 2, NULL, NULL };
+NJS_OBJECT object_027BAC88 = { NJD_EVAL_UNIT_ANG | NJD_EVAL_UNIT_SCL | NJD_EVAL_BREAK, &attach_027BAC5C, 0, 0, 0, 0, 0, 0, 5, 1, 5, NULL, NULL };
 
 
 PL_KILLCOLLI Castlee1_deathzones[] = {

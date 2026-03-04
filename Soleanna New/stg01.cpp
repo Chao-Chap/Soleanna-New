@@ -6,6 +6,7 @@
 NJS_TEXNAME TEX_wvo[170] = { 0 };
 NJS_TEXLIST TEXLIST_wvo = { arrayptrandlength(TEX_wvo) };
 _OBJ_ITEMENTRY OBJECTLIST_WVO_Entries[] = {
+
 	{ 2, 3, 1, 360000, 0, (TaskFuncPtr)0x450370, "RING   " } /* "RING   " */,
 	{ 2, 2, 1, 360000, 0, (TaskFuncPtr)0x7A4C30, "SPRING " } /* "SPRING " */,
 	{ 2, 2, 1, 360000, 0, (TaskFuncPtr)0x7A4E50, "SPRINGB" } /* "SPRINGB" */,
@@ -89,7 +90,8 @@ _OBJ_ITEMENTRY OBJECTLIST_WVO_Entries[] = {
 	{ 2, 3, 1, 160000, 0, (TaskFuncPtr)0x4FA320, "O FROG " } /* "O FROG " */,
 	{ 2, 3, 1, 160000, 0, (TaskFuncPtr)0x4F9FB0, "O BZ " } /* "O BZ " */,
 	{ 15, 3, 1, 160000, 0, (TaskFuncPtr)0x4C07D0, "O ItemBoxAir" } /* "O ItemBoxAir" */,
-	{ 2, 0, 1, 1000000, 0, (TaskFuncPtr)0x4D4BE0, "BIGWJUMP" } /* "BIGWJUMP" */
+	{ 2, 3, 1, 1000000, 0, (TaskFuncPtr)0x61EAC0, "O DOUBLE DOOR" } /* "door" */
+
 };
 
 
@@ -106,13 +108,17 @@ TEX_PVMTABLE TEXTURELIST_wvo[] = {
 	{ "CastleTown_Sky_Eve", &TEXLIST_CastleTown_Sky_Eve },
 
 
-//{ "E_SAI", (TexList*)0x7A1380 },//rhino
-//	{ "E_SARU", (TexList*)0x4AD140 }, ///monke
+	{ "E_SAI", (TexList*)0x38C8EA8 },//rhino
+	{ "E_SARU", (TexList*)0x962560 }, ///monke
+	{ "E_BOMB", (TexList*)0x96B464 }, ///monke bomb
 	{ "PEN", (TexList*)0x92D39C }, // Penguin
-	{ "LION", (TexList*)0x944094 }, // Lion
-	{ "MOGU", (TexList*)0x93ECEC }, // Mole
+	{ "KOAR", (TexList*)0x9359B4 }, // Koala
+	{ "RAKO", (TexList*)0x949FC4 }, // Otter
+	{ "GOMA", (TexList*)0x92ACE4 }, // Seal
 	{ "ZOU", (TexList*)0x94160C }, // Elephant
 	{ "GORI", (TexList*)0x945964 }, // Gorilla
+	{ "E_AMENBO", (TexList*)0x38CD5E0 }, // water skidder
+	{ "sea_bass", (TexList*)0x170FABC }, // fish maybe?
 
 	{ "SUPI_SUPI", (TexList*)0x96F518 },// Spinner
 	{ "UNI_A_UNIBODY", (TexList*)0x96CB5C }, // Unidus Black

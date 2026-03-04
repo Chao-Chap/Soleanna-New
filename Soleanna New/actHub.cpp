@@ -20,9 +20,9 @@ ___stcClip DRAWDISTANCE_CastleTown[] = {
 };
 
 ___stcClip SKYBOXDRAWDISTANCE_CastleTown[] = {
-	{ -1.0f, -10000.0f },
-	{ -1.0f, -10000.0f },
-	{ -1.0f, -10000.0f }
+	{ -1.0f, -100000.0f },
+	{ -1.0f, -100000.0f },
+	{ -1.0f, -100000.0f }
 };
 
 void SETVIEWDATA_CastleTown()

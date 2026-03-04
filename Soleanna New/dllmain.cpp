@@ -8,7 +8,7 @@
 #include "mod.h"
 #include "hub.h"
 #include "o_skybox.h"
-#include "bomb.h"
+#include "braclet.h"
 int MusicID_CastleTown;
 int MusicID_FOREST;
 int MusicID_wvo;
@@ -54,6 +54,7 @@ extern "C"
 		INIT_LevelTask();
 		INIT_LevelTaskWvo();
 		newtitlecard();
+		Sonic_Sol_Init(helperFunctions);
 		INIT_Objects();
 		INIT_WVOObjects();
 		PATHS_wvo();
@@ -69,7 +70,7 @@ extern "C"
 
 		ANIM_Water();
 	
-
+		void Abilites_Bounce(task * tp, playerwk * pwp);
 	}
 
 	__declspec(dllexport) ModInfo SADXModInfo = { ModLoaderVer };

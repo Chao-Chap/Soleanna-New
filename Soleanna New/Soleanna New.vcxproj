@@ -82,6 +82,7 @@
   <ItemGroup>
     <ClInclude Include="AnimationFile.h" />
     <ClInclude Include="bomb.h" />
+    <ClInclude Include="braclet.h" />
     <ClInclude Include="daeth.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Header.h" />
@@ -108,6 +109,7 @@
     <ClCompile Include="AnimationFile.cpp" />
     <ClCompile Include="BenchBenchBench.cpp" />
     <ClCompile Include="bomb.cpp" />
+    <ClCompile Include="braclet.cpp" />
     <ClCompile Include="Citydeath.cpp" />
     <ClCompile Include="deathcast%3be.cpp" />
     <ClCompile Include="deathzoneforest.cpp" />
@@ -136,6 +138,7 @@
     <ClCompile Include="trainspline.cpp" />
     <ClCompile Include="Untitled2.cpp" />
     <ClCompile Include="utils.cpp" />
+    <ClCompile Include="wavekill.cpp" />
     <ClCompile Include="weight.cpp" />
     <ClCompile Include="woman.cpp" />
     <ClCompile Include="wvo.cpp" />

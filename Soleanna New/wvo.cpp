@@ -20,9 +20,9 @@ ___stcClip DRAWDISTANCE_wvo[] = {
 };
 
 ___stcClip SKYBOXDRAWDISTANCE_wvo[] = {
-	{ -1.0f, -10000.0f },
-	{ -1.0f, -10000.0f },
-	{ -1.0f, -10000.0f }
+	{ -1.0f, -100000.0f },
+	{ -1.0f, -100000.0f },
+	{ -1.0f, -100000.0f }
 };
 
 void SETVIEWDATA_wvo()
@@ -46,13 +46,15 @@ void LANDTABLE_wvo()
 
 
 }
+PL_KILLCOLLI* levels_deathzones[] = {
+  Wave_kill,
 
-
+};
 //	Load Deathzones:
 
 void DEATHZONES_wvo()
 {
-	KillingCollisionModelsListList[LevelIDs_Soleanna_Levels1] = Castle_deathzones;
+	KillingCollisionModelsListList[LevelIDs_Soleanna_Levels1] = levels_deathzones;
 
 
 
@@ -68,14 +70,22 @@ HelperFunctionsGlobal.RegisterPathList(PATHDATA_BEACH00);
 StartPosition STARTPOS_wvo00 = { LevelIDs_Soleanna_Levels1, 0, { 183.22f, 934.0f, -723.9f }, 0xC000 };
 StartPosition STARTPOS_wvo01 = { LevelIDs_Soleanna_Levels1, 1, { 1900.22f, 108.0f, -19.9f }, 0xC000 };
 StartPosition STARTPOS_wvo02 = { LevelIDs_Soleanna_Levels1, 2, { -555.0f, 700.0f, 0.9f }, 0xC000 };
+StartPosition STARTPOS_wvoGamma = { LevelIDs_Soleanna_Levels1, 0, { 1894.0f, 48.0f, 9535.9f }, 0xC000 };
+StartPosition STARTPOS_wvoBIG = { LevelIDs_Soleanna_Levels1, 0, { 3351.0f, 129.0f, 6567.0f }, 0xC000 };
 
 void STARTPOSITIONS_wvo()
 {
 	for (unsigned char i = 0; i < Characters_MetalSonic; ++i)
 	{
-		HelperFunctionsGlobal.RegisterStartPosition(i, STARTPOS_wvo00);
+		HelperFunctionsGlobal.RegisterStartPosition(Characters_Gamma, STARTPOS_wvoGamma);
+		HelperFunctionsGlobal.RegisterStartPosition(Characters_Big, STARTPOS_wvoBIG);
+		HelperFunctionsGlobal.RegisterStartPosition(Characters_Sonic, STARTPOS_wvo00);
+		HelperFunctionsGlobal.RegisterStartPosition(Characters_Tails, STARTPOS_wvo00);
+		HelperFunctionsGlobal.RegisterStartPosition(Characters_Knuckles, STARTPOS_wvo00);
+		HelperFunctionsGlobal.RegisterStartPosition(Characters_Amy, STARTPOS_wvoGamma);
 		HelperFunctionsGlobal.RegisterStartPosition(i, STARTPOS_wvo01);
 		HelperFunctionsGlobal.RegisterStartPosition(i, STARTPOS_wvo02);
+	
 	}
 }
 
@@ -103,7 +113,12 @@ void wvo_Init()
 	LoadSetFile(2, "_CITY-");
 	LANDTABLE_wvo();
 
-
+	WriteData((char*)0x981847, (char)1);
+	WriteData((char*)0x981848, (char)2);
+	WriteData((char*)0x981849, (char)9);
+	WriteData((char*)0x98184B, (char)13);
+	
+	LoadPVM("HAMMER", &FISHING_TEXLIST);
 
 }
 
@@ -115,9 +130,9 @@ void LoadingFunctionProxy2()
 		STARTPOSITIONS_wvo();
 		SETVIEWDATA_wvo();
 		wvo_Init();
-
-		CurrentLevel = LevelIDs_StationSquare;
+		CurrentLevel = LevelIDs_EmeraldCoast;
 		LoadLevelObjTextures();
+
 		CurrentLevel = LevelIDs_Soleanna_Levels1;
 
 
