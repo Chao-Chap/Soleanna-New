@@ -41,17 +41,18 @@ static void Sonic_SoleannaActions(EntityData1* data, motionwk2* mwp, CharObj2* c
 				co2->Speed.y += BounceDownSpeed;
 				bouncing = true;
 				data->Status |= Status_Attack;
+
 			}
 
 
 
-			if (bouncing == true && (data->Status & Status_Ground))
+			if (bouncing == true && (data->Action == MD_SONIC_STND or data->Action == MD_SONIC_WALK))
 			{
 				co2->Speed.y = BounceUpSpeed + bounces;
 				data->Status |= Status_Ball;
 				data->Status |= Status_Attack;
 				data->Action = MD_SONIC_JUMP;
-
+				co2->AnimationThing.Index = 14;
 
 				if (bounces < 1.5f)
 
@@ -63,7 +64,7 @@ static void Sonic_SoleannaActions(EntityData1* data, motionwk2* mwp, CharObj2* c
 			}
 
 
-			if (bouncing == false && (data->Status & Status_Ground)) 
+			if (bouncing == false && (data->Action == MD_SONIC_STND or data->Action == MD_SONIC_WALK))
 			{
 
 				bounces = 0;
