@@ -27,4 +27,7 @@ void initwvomusic();
 #include "objects.h"
 #define LevelIDs_Soleanna_Hub 30
 #define LevelIDs_Soleanna_Levels1 11
+#define TaskHook FunctionHook<void, task*>
 #endif
+
+bool CheckControl(int id);

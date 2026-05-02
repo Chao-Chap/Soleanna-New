@@ -9,6 +9,7 @@
 #include "hub.h"
 #include "o_skybox.h"
 #include "braclet.h"
+#include "bomb.h"
 int MusicID_CastleTown;
 int MusicID_FOREST;
 int MusicID_wvo;
@@ -55,6 +56,7 @@ extern "C"
 		INIT_LevelTaskWvo();
 		newtitlecard();
 		Sonic_Sol_Init(helperFunctions);
+		Tails_Sol_Init(helperFunctions);
 		INIT_Objects();
 		INIT_WVOObjects();
 		PATHS_wvo();
@@ -63,7 +65,7 @@ extern "C"
 		CamDataThings[LevelIDs_Soleanna_Hub] = 0x3210;
 		SetDataThings[LevelIDs_Soleanna_Levels1] = 0x3210;
 		CamDataThings[LevelIDs_Soleanna_Levels1] = 0x3210;
-}
+}		
 	__declspec(dllexport) void __cdecl OnFrame()
 	{
 

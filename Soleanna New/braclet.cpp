@@ -1,12 +1,10 @@
 #include "pch.h"
 #include "braclet.h"
-int BounceDownSpeed = -10;
+int BounceDownSpeed = -3;
 float bounces = 0.0f;
 int BounceUpSpeed = 2;
 
-int bouncing = false
-#define TaskHook FunctionHook<void, task*>
-;
+int bouncing = false;
 TaskHook Sonic_Exec_t(SonicTheHedgehog);
 
 DataPointer(bool*, pInputStatusForEachPlayer, 0x40F30C); // we get a pointer to `ucInputStatusForEachPlayer` since the input mod replaces the array
@@ -27,7 +25,6 @@ bool CheckControl(int id)
 }
 static void Sonic_SoleannaActions(EntityData1* data, motionwk2* mwp, CharObj2* co2)
 {
-	for (int i = 0; i < 4; ++i) // or playertwp.size() to loop for the whole player table
 
 		if (co2) {
 
@@ -53,6 +50,7 @@ static void Sonic_SoleannaActions(EntityData1* data, motionwk2* mwp, CharObj2* c
 				data->Status |= Status_Attack;
 				data->Action = MD_SONIC_JUMP;
 				co2->AnimationThing.Index = 14;
+				PlaySound(9, 0, 0, 0);
 
 				if (bounces < 1.5f)
 

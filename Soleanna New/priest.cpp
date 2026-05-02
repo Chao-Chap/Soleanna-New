@@ -50,6 +50,7 @@ const char* Priest3_Dialogue[3] = {
 	{ "\aWe cannot edit what is already printed."},
 	 { nullptr },
 };
+
 const char* Priest4_Dialogue[3] = {
 	{ "\aWhat do we do at our rituals to Solaris?\nThat is an interesting question."},
 	{ "\aIt's very gay. So much homosexual \nactivity. He's all rainbow-y, after all."},

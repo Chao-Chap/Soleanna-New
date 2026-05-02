@@ -1,2 +1,4 @@
 #pragma once
-void Abilites_ringbomb();
+
+void Tails_Sol_Init(const HelperFunctions& helperFunctions);
+void LOAD_Ringbomb();
